@@ -6,11 +6,15 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var keys = require('./keys.js');
-
+var serverController = require('./serverController.js');
+var Cart = require('./models/cart.js');
+var Order = require('./models/order.js');
+var Product = require('./models/product.js');
+var User = require('./models/user.js');
 var app = express();
 
 app.use(session({
-    secret: 'taco cannon',
+    secret: keys.sessionSecret,
     resave: true,
     saveUninitialized: true
 }));
@@ -21,13 +25,14 @@ app.use(bodyParser.json());
 app.use(cors());
 
 mongoose.connect('mongodb://localhost/dirtwaves', function(error) {
-    console.log(error + ' means we can party');
+    console.log('If this > ' + error + ' equals undefined, we can party');
 });
 
 mongoose.set('debug', true);
 
 app.use(express.static(__dirname + '/public'));
 
+// Facebook login protocols---------------------------------
 passport.use(new FacebookStrategy({
     clientID: keys.facebookID,
     clientSecret: keys.facebookSecret,
@@ -50,7 +55,14 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(object, done) {
     done(null, object);
 });
+//---------------------------------------------------------
 
+// Get facebook login
+app.get('/login/facebook', serverController.facebookLogin);
+// add product to database
+app.post('/products', serverController.addProductToDatabase);
+// display all products in database
+app.get('/products', serverController.displayProductsOnDatabase);
 
 app.listen(3000, function() {
     console.log("Party on port 3000");
