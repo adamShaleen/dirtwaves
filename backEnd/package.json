@@ -1,0 +1,32 @@
+{
+  "name": "dirtwaves",
+  "version": "1.0.0",
+  "description": "A simple ecommerce app for bmx trail riders",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamShaleen/dirtwaves.git"
+  },
+  "keywords": [
+    "bmx"
+  ],
+  "author": "Adam Shaleen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamShaleen/dirtwaves/issues"
+  },
+  "homepage": "https://github.com/adamShaleen/dirtwaves#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.14",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.0"
+  }
+}
