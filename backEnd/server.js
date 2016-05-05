@@ -59,10 +59,33 @@ passport.deserializeUser(function(object, done) {
 
 // Get facebook login
 app.get('/login/facebook', serverController.facebookLogin);
+
 // add product to database
 app.post('/products', serverController.addProductToDatabase);
+
 // display all products in database
 app.get('/products', serverController.displayProductsOnDatabase);
+
+// display product on database by id
+app.get('/products/:id', serverController.displayProductOnDatabaseById);
+
+// update product on databse by id
+app.put('/products/:id', serverController.updateProductOnDatabaseById);
+
+// delete product on database by id
+app.delete('/products/:id', serverController.deleteProductOnDatabaseById);
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(3000, function() {
     console.log("Party on port 3000");
