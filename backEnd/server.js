@@ -57,8 +57,27 @@ passport.deserializeUser(function(object, done) {
 });
 //---------------------------------------------------------
 
+// USER---------------------------------------------------
+
 // Get facebook login
 app.get('/login/facebook', serverController.facebookLogin);
+
+// Add new user
+app.post('/login/user', serverController.addNewUserToDatabase);
+
+// display all users on database
+app.get('/login/user', serverController.displayUsersOnDatabase);
+
+// display user on database by id
+app.get('/login/user/:id', serverController.displayUserOnDatabaseById);
+
+// Update user on database by id
+app.put('/login/user/:id', serverController.updateUserOnDatabaseById);
+
+// delete user on database by id
+app.delete('/login/user/:id', serverController.deleteUserOnDatabaseById);
+
+// PRODUCT------------------------------------------------
 
 // add product to database
 app.post('/products', serverController.addProductToDatabase);
@@ -75,14 +94,22 @@ app.put('/products/:id', serverController.updateProductOnDatabaseById);
 // delete product on database by id
 app.delete('/products/:id', serverController.deleteProductOnDatabaseById);
 
+// ORDER---------------------------------------------------
 
+// Add order to database
+app.post('/order', serverController.addOrderToDatabase);
 
+// display all orders on database
+app.get('/order', serverController.displayOrdersOnDatabase);
 
+// display order on database by id
+app.get('/order/:id', serverController.displayOrderOnDatabaseById);
 
+// update Order on database by id
+app.put('/order/:id', serverController.updateOrderOnDatabaseById);
 
-
-
-
+// delete Order on database by id
+app.delete('/order/:id', serverController.deleteOrderOnDatabaseById);
 
 
 
