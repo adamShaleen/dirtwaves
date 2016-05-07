@@ -27,8 +27,7 @@ var productSchema = new Schema ({
         }
         ],
     image: {
-        type: String,
-        // required: true
+        type: String,  // pointed url for all products to local file.  Not sure if this works...
     }
 });
 
