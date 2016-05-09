@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 mongoose.connect('mongodb://localhost/dirtwaves', function(error) {
-    console.log('If this -> ' + error + ' = undefined, we can party');
+    console.log('If ' + error + ' = undefined, we can party');
 });
 
 mongoose.set('debug', true);
@@ -60,7 +60,28 @@ passport.deserializeUser(function(object, done) {
 // USER---------------------------------------------------
 
 // Get facebook login
-app.get('/login/facebook', serverController.facebookLogin);
+app.get('/shop',
+function(request, response, next){
+    User.findOne({fbId: request.user.id}, function(error, serverResponse) {
+        if (serverResponse) {
+            request.user = serverResponse;
+            next();
+        }
+        else {
+            var newUser = new User({name: request.user.displayName, fbId: request.user.id});
+            newUser.save(request.body, function(userError, userServerResponse) {
+                if (userError) {
+                    return response.status(500).json(userError);
+                }
+                else {
+                    request.user = userServerResponse;
+                    next();
+                }
+            });
+        }
+    });
+},
+serverController.facebookLogin);
 
 // Add new user
 app.post('/login/user', serverController.addNewUserToDatabase);

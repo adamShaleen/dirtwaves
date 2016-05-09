@@ -4,10 +4,10 @@ var cartSchema = require('./cart.js');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema ({
-    name: {type: String, required: true},
-    fbName: {type: String},
-    email: {type: String, required: true},
-    password: {type: String, required: true},
+    name: {type: String},
+    fbId: {type: String},
+    email: {type: String},
+    password: {type: String},
     cart: [cartSchema]
 });
 

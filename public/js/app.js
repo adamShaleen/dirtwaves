@@ -12,6 +12,18 @@ angular.module('dirtWaves', ['ui.router'])
             url: '/shop',
             templateUrl: 'shop.html',
             controller: 'shopController',
+        })
+
+        .state('checkout', {
+            url: '/checkout',
+            templateUrl: 'checkout.html',
+            controller: 'checkoutController',
+        })
+
+        .state('admin', {
+            url: '/superSecretAdminStuff',
+            templateUrl: 'admin.html',
+            controller: 'adminController',
         });
 
 

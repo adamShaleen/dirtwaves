@@ -8,7 +8,6 @@ module.exports = {
     // USER-------------------------------------------
 
     facebookLogin: function(request, response, next) {
-        console.log(request.user);
         return response.send(request.user);
     },
 
