@@ -5,13 +5,13 @@ angular.module('dirtWaves', ['ui.router'])
         .state('login', {
             url: '/login',
             templateUrl: 'login.html',
-            controller: 'loginController.js',
+            controller: 'loginController',
         })
 
         .state('shop', {
             url: '/shop',
             templateUrl: 'shop.html',
-            controller: 'shopController.js',
+            controller: 'shopController',
         });
 
 

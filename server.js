@@ -6,11 +6,11 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var keys = require('./keys.js');
-var serverController = require('./serverController.js');
-var Cart = require('./models/cart.js');
-var Order = require('./models/order.js');
-var Product = require('./models/product.js');
-var User = require('./models/user.js');
+var serverController = require('./backend/serverController.js');
+var Cart = require('./backend/models/cart.js');
+var Order = require('./backend/models/order.js');
+var Product = require('./backend/models/product.js');
+var User = require('./backend/models/user.js');
 var app = express();
 
 app.use(session({
@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 mongoose.connect('mongodb://localhost/dirtwaves', function(error) {
-    console.log('If this > ' + error + ' equals undefined, we can party');
+    console.log('If this -> ' + error + ' = undefined, we can party');
 });
 
 mongoose.set('debug', true);
