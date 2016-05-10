@@ -2,16 +2,59 @@
     <P>Dirt Waves</p>
 </div>
 
-<div class="user_status">
-    <i class="fa fa-user fa-2x"></i>
-    <i class="fa fa-shopping-cart fa-2x"></i>
-    <a href="/#/login"><i class="fa fa-times fa-2x"></i></a>
+<div class="user_status_icons">
+        <i ng-click="toggle_current_user()" class="fa fa-user fa-2x"></i>
+        <i class="fa fa-shopping-cart fa-2x"></i>
+        <a href="/#/login"><i class="fa fa-times fa-2x"></i></a>
 </div>
 
-<div class="navBar">
-    <p>Frames</p>
-    <p>Bars</p>
-    <p>Stems</p>
-    <p>Tires</p>
-    <p>Accessories</p>
+<div class="user_status_text">
+    <p ng-show="current_user">{{user_name.displayName}}</p>
+</div>
+
+<div class="navBar_container">
+<div class="navBar dropdown">
+    <p class="dropdown-toggle" data-toggle="dropdown">Frames</p>
+        <ul class="dropdown-menu">
+            <div ng-repeat="frame in frames">
+            <li>{{frame}}</li>
+        </div>
+        </ul>
+    </div>
+
+<div class="navBar dropdown">
+    <p class="dropdown-toggle" data-toggle="dropdown">Bars</p>
+        <ul class="dropdown-menu">
+            <div ng-repeat="bar in bars">
+            <li>{{bar}}</li>
+        </div>
+        </ul>
+    </div>
+
+<div class="navBar dropdown">
+    <p class="dropdown-toggle" data-toggle="dropdown">Stems</p>
+        <ul class="dropdown-menu">
+            <div ng-repeat="stem in stems">
+            <li>{{stem}}</li>
+        </div>
+        </ul>
+    </div>
+
+<div class="navBar dropdown">
+    <p class="dropdown-toggle" data-toggle="dropdown">Tires</p>
+        <ul class="dropdown-menu">
+            <div ng-repeat="tire in tires">
+            <li>{{tire}}</li>
+        </div>
+        </ul>
+    </div>
+
+<div class="navBar dropdown">
+    <p class="dropdown-toggle" data-toggle="dropdown">Acc</p>
+        <ul class="dropdown-menu">
+            <div ng-repeat="accessories in acc">
+            <li>{{accessories}}</li>
+        </div>
+        </ul>
+    </div>
 </div>

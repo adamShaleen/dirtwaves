@@ -85,6 +85,9 @@ function(request, response, next){
 },
 serverController.facebookLogin);
 
+// user login
+app.get('/login/current_user', serverController.login);
+
 // Add new user
 app.post('/login/user', serverController.addNewUserToDatabase);
 

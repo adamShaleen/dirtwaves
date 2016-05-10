@@ -13,6 +13,10 @@ module.exports = {
         response.end();
     },
 
+    login: function(request, response, next) {
+        response.send(request.user);
+    },
+
     addNewUserToDatabase: function(request, response, next) {
         var newUser = new User(request.body);
         newUser.save(request.body, function(error, serverResponse) {

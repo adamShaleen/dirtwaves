@@ -83,34 +83,45 @@
     text-align: center;
 }
 
-.user_status {
+.user_status_icons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-top: 10px;
 }
 
-.user_status a {
+.user_status_icons a {
     text-decoration: none;
     color: black;
 }
 
-.navBar {
+.user_status_text {
+    text-align: center;
+    font-family: Cedarville cursive;
+}
+
+.navBar_container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.navBar {
     font-family: Cedarville cursive;
     margin-top: 10px;
+}
+
+.navBar li {
+    padding-left: 5px;
 }
 
 .shop_image {
     background-image: url('img/clintRoast.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
-    width: 94vw;
+    background-size: cover;
+    width: 100%;
     height: 200px;
     margin-top: 10px;
-    margin-left: 10px;
 }
 
 #shopTagline {
