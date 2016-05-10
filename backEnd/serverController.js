@@ -8,7 +8,9 @@ module.exports = {
     // USER-------------------------------------------
 
     facebookLogin: function(request, response, next) {
-        return response.send(request.user);
+        response.statusCode = 302;
+        response.setHeader('Location', '/#/shop');
+        response.end();
     },
 
     addNewUserToDatabase: function(request, response, next) {

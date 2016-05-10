@@ -1,6 +1,48 @@
+<div class="loginTitleContainer">
+    <img src="img/logo.png"></img>
+    <p id= "tagline">Where trails are made</p>
+</div>
+
+<div class="login_logo">
+    <img src="img/sprocket.png"></img>
+</div>
+
+<div ng-hide="toggleLogin" class="loginButton">
+    <p ng-click="toggleLoginOnClick()">Login</p>
+</div>
+
+<div ng-show="toggleLogin" ng-click="toggleLoginOnClick()" class="login_input_container">
+    <div class="signup">
+        <p>sign up & login<br>
+        <input placeholder="username"></input>
+        <input placeholder="password"></input><br>
+    </div>
+    <div class="fbLogin">
+        <p>or login with Facebook<br>
+        <a href="/login/facebook"><i class="fa fa-facebook-square fa-2x"></i></a></p>
+    </div>
+</div>
 
 
-<p>Login View</p>
+<footer-contact></footer-contact>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

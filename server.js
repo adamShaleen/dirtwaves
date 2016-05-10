@@ -45,7 +45,7 @@ app.get('/login/facebook', passport.authenticate('facebook'));
 
 app.get('/login/facebook/callback', passport.authenticate('facebook', {
     successRedirect: '/shop',
-    failureRedirect: '/login/facebook'
+    failureRedirect: '/login'
 }));
 
 passport.serializeUser(function(user, done) {
@@ -58,6 +58,8 @@ passport.deserializeUser(function(object, done) {
 //---------------------------------------------------------
 
 // USER---------------------------------------------------
+
+// add endpoint for passport local authenticate.  point to a seperate controller.  AFter MVP.
 
 // Get facebook login
 app.get('/shop',

@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.loginTitleContainer {
+    text-align: center;
+    margin-top: 20px;
+    z-index: -10;
+}
+
+.loginTitleContainer img {
+    width: 100vw;
+}
+
+#tagline {
+    font-family: Cedarville Cursive;
+    font-size: 8vw;
+}
+
+.login_logo {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login_logo img {
+    width: 35vw;
+    height: 20vh;
+}
+
+.loginButton {
+    font-family: Cedarville cursive;
+    text-align: center;
+    font-size: 10vw;
+    margin-top: 10px;
+}
+
+.login_input_container {
+    position: fixed;
+    width: 100%;
+    height: max-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 100;
+    color: white;
+    background-color: black;
+    font-family: Cedarville cursive;
+    font-size: 8vw;
+    border: 1px solid white;
+}
+
+.signup, .login, .fbLogin {
+    width: max-content;
+    margin: auto;
+    text-align: center;
+}
+
+.fbLogin a {
+    text-decoration: none;
+    color: white;
+}
+
+.fbLogin: hover {
+    cursor: pointer;
+}
+
+.login_input_container input {
+    border: 1px solid black;
+    width: 100px;
+    text-align: center;
+    font-family: Cedarville cursive;
+    font-size: 12px;
+}
+
+.shop_order_header {
+    background-color: black;
+    color: white;
+    font-family: Cedarville cursive;
+    font-size: 10vw;
+    text-align: center;
+}
+
+.user_status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.user_status a {
+    text-decoration: none;
+    color: black;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: Cedarville cursive;
+    margin-top: 10px;
+}
+
+.shop_image {
+    background-image: url('img/clintRoast.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 94vw;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#shopTagline {
+    font-family: Cedarville Cursive;
+    font-size: 8vw;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footerContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    bottom: 0px;
+}
