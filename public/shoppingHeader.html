@@ -17,7 +17,7 @@
     <p class="dropdown-toggle" data-toggle="dropdown">Frames</p>
         <ul class="dropdown-menu">
             <div ng-repeat="frame in frames">
-            <li>{{frame}}</li>
+            <li ng-click="selectProduct(frame)">{{frame.title}}</li>
         </div>
         </ul>
     </div>
@@ -26,7 +26,7 @@
     <p class="dropdown-toggle" data-toggle="dropdown">Bars</p>
         <ul class="dropdown-menu">
             <div ng-repeat="bar in bars">
-            <li>{{bar}}</li>
+            <li ng-click="selectProduct(bar)">{{bar.title}}</li>
         </div>
         </ul>
     </div>
@@ -35,7 +35,7 @@
     <p class="dropdown-toggle" data-toggle="dropdown">Stems</p>
         <ul class="dropdown-menu">
             <div ng-repeat="stem in stems">
-            <li>{{stem}}</li>
+            <li ng-click="selectProduct(stem)">{{stem.title}}</li>
         </div>
         </ul>
     </div>
@@ -44,17 +44,35 @@
     <p class="dropdown-toggle" data-toggle="dropdown">Tires</p>
         <ul class="dropdown-menu">
             <div ng-repeat="tire in tires">
-            <li>{{tire}}</li>
+            <li ng-click="selectProduct(tire)">{{tire.title}}</li>
         </div>
         </ul>
     </div>
 
 <div class="navBar dropdown">
-    <p class="dropdown-toggle" data-toggle="dropdown">Acc</p>
+    <p class="dropdown-toggle" data-toggle="dropdown">Acc.</p>
         <ul class="dropdown-menu">
             <div ng-repeat="accessories in acc">
-            <li>{{accessories}}</li>
+            <li ng-click="selectProduct(accessories)">{{accessories.title}}</li>
         </div>
         </ul>
     </div>
+</div>
+
+<div ng-hide="product_img_toggle" class="shop_image"></div>
+
+<div ng-show="product_img_toggle" class="product_content_container">
+        <div id="product_title"><p>{{selectedProduct.title}}</p></div>
+        <div id="product_image"><img ng-src="{{selectedProduct.image}}"></img></div>
+        <div id="product_description"><p>{{selectedProduct.description}}</p></div>
+        <div id="product_geo"><p>{{selectedProduct.geo}}</p></div>
+        <div id="product_price"><p>${{selectedProduct.price}}</p></div>
+        <button ng-click="toggleAddToCartModal(selectedProduct._id)" ng-hide="addToCartModal[selectedProduct._id]" class="btn">add to cart</button>
+        <div ng-show="addToCartModal[selectedProduct._id]" id="add_to_cart"><p>added to cart!</p></div>
+</div>
+
+<p ng-hide="product_img_toggle" id="shopTagline">Where trails are made</p>
+
+<div ng-hide="product_img_toggle" class="shop_logo">
+    <img src="img/sprocket.png"></img>
 </div>

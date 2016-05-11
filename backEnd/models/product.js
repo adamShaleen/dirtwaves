@@ -19,14 +19,7 @@ var productSchema = new Schema ({
         required: true,
         min: 0
     },
-    geo: [
-        {
-        headtube: {type: Number},
-        bbHeight: {type: Number},
-        chainstay: {type: Number},
-        seattube: {type: Number}
-        }
-        ],
+    geo: {type: String},
     image: {
         type: String,  // pointed url for all products to local file.  Not sure if this works...
     }

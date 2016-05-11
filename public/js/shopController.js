@@ -31,24 +31,50 @@ $scope.displayProducts = function() {
     service.displayProducts().then(function(response) {
         for (var i = 0; i < response.length; i++) {
             if (response[i].category === 'frame') {
-                $scope.frames.push(response[i].title);
+                $scope.frames.push(response[i]);
             }
             if (response[i].category === 'bars') {
-                $scope.bars.push(response[i].title);
+                $scope.bars.push(response[i]);
             }
             if (response[i].category === 'stem') {
-                $scope.stems.push(response[i].title);
+                $scope.stems.push(response[i]);
             }
             if (response[i].category === 'tire') {
-                $scope.tires.push(response[i].title);
+                $scope.tires.push(response[i]);
             }
             if (response[i].category === 'acc') {
-                $scope.acc.push(response[i].title);
+                $scope.acc.push(response[i]);
             }
         }
     });
 };
 
 $scope.displayProducts();
+//--------------------------------------------------------------
+
+// product select
+$scope.product_img_toggle = false;
+
+$scope.selectProduct = function(product) {
+    $scope.selectedProduct = product;
+    if ($scope.product_img_toggle === false) {
+        $scope.product_img_toggle = !$scope.product_img_toggle;
+    }
+};
+//-------------------------------------------------------------
+
+// toggle between background image and product content
+
+$scope.toggleProductImg = function() {
+    $scope.product_img_toggle = !$scope.product_img_toggle;
+};
+//---------------------------------------------------------------
+
+$scope.addToCartModal = {};
+
+$scope.toggleAddToCartModal = function(id) {
+    $scope.addToCartModal[id] = true;
+};
+
 
 });  // closing controller tag

@@ -78,7 +78,7 @@
 .shop_order_header {
     background-color: black;
     color: white;
-    font-family: Cedarville cursive;
+    font-family: Amatic SC;
     font-size: 10vw;
     text-align: center;
 }
@@ -97,7 +97,13 @@
 
 .user_status_text {
     text-align: center;
-    font-family: Cedarville cursive;
+    font-family: Amatic SC;
+    font-size: 6vw;
+    margin-top: 5px;
+}
+
+.user_status_text p {
+    margin: 0px;
 }
 
 .navBar_container {
@@ -107,7 +113,8 @@
 }
 
 .navBar {
-    font-family: Cedarville cursive;
+    font-family: Amatic SC;
+    font-size: 6vw;
     margin-top: 10px;
 }
 
@@ -124,11 +131,41 @@
     margin-top: 10px;
 }
 
+.product_content_container {
+    text-align: center;
+    font-size: 6vw;
+    font-family: Amatic SC;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.product_content_container img {
+    width: 200px;
+    height: 175px;
+}
+
+.product_content_container p {
+    margin: 0px;
+}
+
+#product_title {
+    font-size: 10vw;
+}
+
 #shopTagline {
     font-family: Cedarville Cursive;
     font-size: 8vw;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
+}
+
+.shop_logo {
+    text-align: center;
+}
+
+.shop_logo img {
+    width: 27vw;
+    height: 15vh;
 }
 
 .footerContainer {
