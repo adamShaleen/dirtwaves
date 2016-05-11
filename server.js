@@ -120,6 +120,11 @@ app.put('/products/:id', serverController.updateProductOnDatabaseById);
 // delete product on database by id
 app.delete('/products/:id', serverController.deleteProductOnDatabaseById);
 
+// Carts
+
+// add product to cart
+// app.put('/cart/addItem', serverController.addItemToCart);
+
 // ORDER---------------------------------------------------
 
 // Add order to database

@@ -29,10 +29,9 @@
 }
 
 .loginButton {
-    font-family: Cedarville cursive;
+    font-family: Amatic SC;
     text-align: center;
-    font-size: 10vw;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .login_input_container {
@@ -47,7 +46,7 @@
     z-index: 100;
     color: white;
     background-color: black;
-    font-family: Cedarville cursive;
+    font-family: Amatic SC;
     font-size: 8vw;
     border: 1px solid white;
 }
@@ -71,7 +70,7 @@
     border: 1px solid black;
     width: 100px;
     text-align: center;
-    font-family: Cedarville cursive;
+    font-family: Amatic SC;
     font-size: 12px;
 }
 
