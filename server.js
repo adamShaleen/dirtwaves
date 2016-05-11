@@ -123,7 +123,7 @@ app.delete('/products/:id', serverController.deleteProductOnDatabaseById);
 // Carts
 
 // add product to cart
-// app.put('/cart/addItem', serverController.addItemToCart);
+app.put('/cart/addItem', serverController.addItemToCart);
 
 // ORDER---------------------------------------------------
 

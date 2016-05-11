@@ -131,6 +131,20 @@ module.exports = {
         });
     },
 
+    // ADD TO CART------------------------------------------------------
+
+    addItemToCart: function(request, response, next) {
+        User.findByIdAndUpdate(request.params.id, request.body, function(error, serverResponse) {
+            if (error) {
+                return response.status(500).json(error);
+            }
+            else {
+                return response.status(200).json(serverResponse);
+            }
+        });
+    },
+
+
     // ORDER-----------------------------------------------
 
     addOrderToDatabase: function(request, response, next) {

@@ -70,11 +70,23 @@ $scope.toggleProductImg = function() {
 };
 //---------------------------------------------------------------
 
-$scope.addToCartModal = {};
+// add to cart
 
+$scope.addToCartModal = {};
 $scope.toggleAddToCartModal = function(id) {
     $scope.addToCartModal[id] = true;
 };
 
+
+$scope.cart = [];
+$scope.addToCart = function(product) {
+    service.addItemToCart().then(function(response) {
+        $scope.cart.push(product);
+        console.log($scope.cart);
+    });
+};
+
+
+//---------------------------------------------------------------
 
 });  // closing controller tag

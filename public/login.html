@@ -1,15 +1,16 @@
-<div class="loginTitleContainer">
+<div ng-hide="toggleLogin" class="loginTitleContainer">
     <img src="img/logo.png"></img>
     <p id= "tagline">Where trails are made</p>
 </div>
 
 <div class="login_logo">
-    <img src="img/sprocket.png"></img>
+    <img ng-hide="toggleLogin" ng-click="toggleLoginOnClick()" src="img/sprocket.png"></img>
 </div>
 
 <div ng-hide="toggleLogin" class="loginButton">
     <button class="btn" ng-click="toggleLoginOnClick()">Login</button>
 </div>
+
 
 <div ng-show="toggleLogin" ng-click="toggleLoginOnClick()" class="login_input_container">
     <div class="signup">
@@ -23,6 +24,9 @@
     </div>
 </div>
 
+<div class="toggle_logo_wave_bottom">
+    <img ng-show="toggleLogin" src="img/wave.png"></img>
+</div>
 
 <footer-contact></footer-contact>
 

@@ -20,5 +20,19 @@ this.displayProducts = function() {
         return response.data;
     });
 };
+//------------------------------------------------------------
+
+// add item to cart
+this.addItemToCart = function(product) {
+    return $http ({
+        method: "PUT",
+        url: '/cart/addItem',
+        data: product
+    }).then(function(response) {
+        return response.data;
+    });
+};
+
+
 
 });  // closing service tag
