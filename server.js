@@ -38,7 +38,23 @@ passport.use(new FacebookStrategy({
     clientSecret: keys.facebookSecret,
     callbackURL: "http://localhost:3000/login/facebook/callback"
 }, function(token, refreshToken, profile, done) {
-    return done(null, profile);
+    //Check/Create User
+    User.findOne({fbId: profile.id}, function(error, serverResponse) {
+        if (serverResponse) {
+            return done(null, serverResponse);
+        }
+        else {
+            var newUser = new User({name: profile.displayName, fbId: profile.id});
+            newUser.save(function(userError, userServerResponse) {
+                if (userError) {
+                    return response.status(500).json(userError);
+                }
+                else {
+                    return done(null, userServerResponse);
+                }
+            });
+        }
+    });
 }));
 
 app.get('/login/facebook', passport.authenticate('facebook'));
@@ -62,28 +78,7 @@ passport.deserializeUser(function(object, done) {
 // add endpoint for passport local authenticate.  point to a seperate controller.  AFter MVP.
 
 // Get facebook login
-app.get('/shop',
-function(request, response, next){
-    User.findOne({fbId: request.user.id}, function(error, serverResponse) {
-        if (serverResponse) {
-            request.user = serverResponse;
-            next();
-        }
-        else {
-            var newUser = new User({name: request.user.displayName, fbId: request.user.id});
-            newUser.save(request.body, function(userError, userServerResponse) {
-                if (userError) {
-                    return response.status(500).json(userError);
-                }
-                else {
-                    request.user = userServerResponse;
-                    next();
-                }
-            });
-        }
-    });
-},
-serverController.facebookLogin);
+app.get('/shop', serverController.facebookLogin);
 
 // user login
 app.get('/login/current_user', serverController.login);

@@ -78,15 +78,19 @@ $scope.toggleAddToCartModal = function(id) {
 };
 
 
-$scope.cart = [];
 $scope.addToCart = function(product) {
     service.addItemToCart().then(function(response) {
-        $scope.cart.push(product);
-        console.log($scope.cart);
+        if (!$scope.user_name.cart) {
+            $scope.user_name.cart = [];
+        }
+        $scope.user_name.cart.push({id: product, qty: 1});
+        service.updateUser($scope.user_name);
+        console.log($scope.user_name);
     });
 };
 
 
 //---------------------------------------------------------------
+
 
 });  // closing controller tag

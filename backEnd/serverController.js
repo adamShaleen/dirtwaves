@@ -134,6 +134,7 @@ module.exports = {
     // ADD TO CART------------------------------------------------------
 
     addItemToCart: function(request, response, next) {
+        console.log(request.body);
         User.findByIdAndUpdate(request.params.id, request.body, function(error, serverResponse) {
             if (error) {
                 return response.status(500).json(error);

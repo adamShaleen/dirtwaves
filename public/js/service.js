@@ -33,6 +33,16 @@ this.addItemToCart = function(product) {
     });
 };
 
+//-----------------------------------------------------------
 
+this.updateUser = function(user) {
+    return $http ({
+        method: "PUT",
+        url: '/login/user/' + user._id,
+        data: user
+    }).then(function(response) {
+        return response.data;
+    });
+};
 
 });  // closing service tag

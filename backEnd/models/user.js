@@ -8,7 +8,12 @@ var userSchema = new Schema ({
     fbId: {type: String},
     email: {type: String},
     password: {type: String},
-    cart: [cartSchema]
+    cart: [
+        {
+            id: {type: Schema.Types.ObjectId, ref: "Product"},
+            qty: {type: Number}
+        }
+    ]
 });
 
 module.exports = mongoose.model('User', userSchema);
