@@ -15,7 +15,7 @@
 <div class="checkout_item_container">
     <p class="product_title">Order Summary</p>
         <div ng-repeat="product in user_name.cart">
-            <p>{{product.id.title}} qty:{{product.qty}} ${{product.id.price}} <i class="fa fa-times"></i></p>
+            <p>{{product.id.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qty:{{product.qty}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i ng-click="addQty(product)" class="fa fa-plus-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-minus-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${{product.id.price}} each&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i ng-click="removeItemFromCart(product)" class="fa fa-times"></i></p>
         </div>
 </div>
 
@@ -23,8 +23,7 @@
 
 <div class="order_confirm_container">
     <p>Subtotal $</p>
-    <p>tax $</p>
-    <p>shipping $</p>
+    <p>tax and shipping $</p>
     <p>total $</p>
     <button class="btn">Submit Order</button>
 </div>
