@@ -85,7 +85,6 @@ $scope.addToCart = function(product) {
         }
         $scope.user_name.cart.push({id: product, qty: 1});
         service.updateUser($scope.user_name);
-        console.log($scope.user_name);
     });
 };
 

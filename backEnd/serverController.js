@@ -14,7 +14,14 @@ module.exports = {
     },
 
     login: function(request, response, next) {
-        response.send(request.user);
+        User.findById(request.user._id).populate('cart.id').exec(function(error, serverResponse) {
+            if (error) {
+                return response.status(500).json(error);
+            }
+            else {
+                response.send(serverResponse);
+            }
+        });
     },
 
     addNewUserToDatabase: function(request, response, next) {

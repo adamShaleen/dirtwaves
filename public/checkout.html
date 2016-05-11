@@ -1,7 +1,33 @@
-<p>Checkout</p>
+<div class="shop_order_header">
+    <P>Dirt Waves</p>
+</div>
 
+<div class="user_status_icons">
+        <button class="btn"><i ng-click="toggle_current_user()" class="fa fa-user fa-2x"></i></button>
+        <button class="btn"><a ui-sref="shop"<i class="fa fa-shopping-bag fa-2x"></i></a></button>
+        <button class="btn"><a href="/#/login"><i class="fa fa-times fa-2x"></i></a></button>
+</div>
 
+<div class="user_status_text">
+    <p ng-show="current_user">You are logged in as: {{user_name.name}}</p>
+</div>
 
+<div class="checkout_item_container">
+    <p class="product_title">Order Summary</p>
+        <div ng-repeat="product in user_name.cart">
+            <p>{{product.id.title}} qty:{{product.qty}} ${{product.id.price}} <i class="fa fa-times"></i></p>
+        </div>
+</div>
+
+    <hr id="hr">
+
+<div class="order_confirm_container">
+    <p>Subtotal $</p>
+    <p>tax $</p>
+    <p>shipping $</p>
+    <p>total $</p>
+    <button class="btn">Submit Order</button>
+</div>
 
 
 <footer-contact></footer-contact>

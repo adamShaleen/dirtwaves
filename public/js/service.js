@@ -35,6 +35,7 @@ this.addItemToCart = function(product) {
 
 //-----------------------------------------------------------
 
+// update user
 this.updateUser = function(user) {
     return $http ({
         method: "PUT",
@@ -44,5 +45,7 @@ this.updateUser = function(user) {
         return response.data;
     });
 };
+//-----------------------------------------------------------
+
 
 });  // closing service tag

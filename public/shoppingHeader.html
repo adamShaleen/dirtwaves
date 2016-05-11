@@ -4,12 +4,12 @@
 
 <div class="user_status_icons">
         <button class="btn"><i ng-click="toggle_current_user()" class="fa fa-user fa-2x"></i></button>
-        <button class="btn"><i class="fa fa-shopping-cart fa-2x"></i></button>
+        <button class="btn"><a ui-sref="checkout"<i class="fa fa-shopping-cart fa-2x"></i></a></button>
         <button class="btn"><a href="/#/login"><i class="fa fa-times fa-2x"></i></a></button>
 </div>
 
 <div class="user_status_text">
-    <p ng-show="current_user">{{user_name.name}}</p>
+    <p ng-show="current_user">You are logged in as: {{user_name.name}}</p>
 </div>
 
 <div class="navBar_container">
@@ -62,7 +62,7 @@
 <div ng-hide="product_img_toggle" class="shop_image"></div>
 
 <div ng-show="product_img_toggle" class="product_content_container">
-        <div id="product_title"><p>{{selectedProduct.title}}</p></div>
+        <div class="product_title"><p>{{selectedProduct.title}}</p></div>
         <div id="product_image"><img ng-src="{{selectedProduct.image}}"></img></div>
         <div id="product_description"><p>{{selectedProduct.description}}</p></div>
         <div id="product_geo"><p>{{selectedProduct.geo}}</p></div>

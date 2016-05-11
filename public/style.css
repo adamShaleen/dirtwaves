@@ -152,7 +152,7 @@
     margin: 0px;
 }
 
-#product_title {
+.product_title {
     font-size: 10vw;
 }
 
@@ -170,6 +170,29 @@
 .shop_logo img {
     width: 27vw;
     height: 15vh;
+}
+
+.checkout_item_container {
+    font-family: Amatic SC;
+    font-size: 6vw;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#hr {
+    margin: auto;
+    width: 200px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.order_confirm_container {
+    font-family: Amatic SC;
+    font-size: 6vw;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .footerContainer {
