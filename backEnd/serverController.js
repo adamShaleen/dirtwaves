@@ -14,7 +14,7 @@ module.exports = {
     },
 
     login: function(request, response, next) {
-        User.findById(request.user._id).populate('cart.id').exec(function(error, serverResponse) {
+        User.findById(request.user._id).populate('cart.id').populate("orders").exec(function(error, serverResponse) {
             if (error) {
                 return response.status(500).json(error);
             }
@@ -171,7 +171,6 @@ module.exports = {
 
     displayOrdersOnDatabase: function(request, response, next) {
         Order.find().populate("items.id").populate({path: "user", select: "name"}).exec(function(error, serverResponse) {
-            console.log("user.name");
             if (error) {
                 return response.status(500).json(error);
             }

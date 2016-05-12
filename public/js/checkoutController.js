@@ -90,16 +90,24 @@ $scope.toggleCheckoutAndConfirmation = function() {
 //----------------------------------------------------------------------
 
 
-// submit order
+// submit order and display the most recent order on confirmation page
 
 $scope.submitOrder = function(user, total) {
     service.submitOrder(user, total).then(function(response) {
-        console.log(response, $scope.user_name);
         $scope.user_name.cart = [];
         $scope.user_name.orders.push(response._id);
-        service.updateUser($scope.user_name);
+        service.updateUser($scope.user_name).then(function(response) {
+            $scope.displayUser();
+        });
     });
 };
 
+$scope.findArrivalDate = function(date){
+
+    var dateNum = Date.parse(new Date(date));
+    dateNum += 259200000;
+    return new Date(dateNum);
+
+};
 
 });  // closing controller tag

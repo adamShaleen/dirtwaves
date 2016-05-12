@@ -30,8 +30,9 @@
 
 <div ng-show="checkoutAndConfirmation" class="checkout_item_container">
     <p class="product_title">Order Confirmation</p>
-    <p>Your order number is DW{{user_name.orders[user_name.orders.length -1]}}</p>
-    <p>Your order is estimated to arrive on </p>
+    <p>Your order number is DW{{user_name.orders[user_name.orders.length -1]._id}}</p>
+    <p>Your order is estimated to arrive on
+        {{findArrivalDate(user_name.orders[user_name.orders.length -1].orderDate) | date: yyyy-MM-dd}}</p>
 </div>
 
 <div ng-show="checkoutAndConfirmation" class="shop_image"></div>
