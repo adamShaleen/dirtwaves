@@ -14,6 +14,7 @@ angular.module("dirtWaves").controller("checkoutController", function($scope, se
     $scope.displayUser = function() {
         service.displayUser().then(function(response) {
             $scope.user_name = response;
+            $scope.displaytotals();
         });
     };
 
@@ -28,6 +29,7 @@ $scope.addQty = function(product) {
         if ($scope.user_name.cart[i] === product) {
             $scope.user_name.cart[i].qty++;
             service.updateUser($scope.user_name);
+            $scope.displaytotals();
         }
     }
 };
@@ -40,6 +42,7 @@ $scope.removeQty = function(product) {
             if ($scope.user_name.cart[i].qty !== 1) {
                 $scope.user_name.cart[i].qty--;
                 service.updateUser($scope.user_name);
+                $scope.displaytotals();
             }
         }
     }
@@ -52,12 +55,57 @@ $scope.removeItemFromCart = function(product) {
         if ($scope.user_name.cart[i] === product) {
             $scope.user_name.cart.splice($scope.user_name.cart[i], 1);
             service.updateUser($scope.user_name);
+            $scope.displaytotals();
         }
     }
 };
 
 // display shopping cart totals on checkout page
 
+$scope.subtotal = 0;
+$scope.taxAndShipping = 0;
+$scope.total = 0;
 
+$scope.displaytotals = function() {
+    $scope.subtotal = 0;
+    $scope.taxAndShipping = 0;
+    $scope.total = 0;
+    for (var i = 0; i < $scope.user_name.cart.length; i++) {
+            $scope.subtotal += ($scope.user_name.cart[i].id.price * $scope.user_name.cart[i].qty);
+            $scope.taxAndShipping += ($scope.subtotal * 0.047) + 10;
+            $scope.total = $scope.subtotal + $scope.taxAndShipping;
+            service.updateUser($scope.user_name);
+    }
+};
+
+//----------------------------------------------------------------------
+
+// toggling between order summary and confirmation information
+
+$scope.checkoutAndConfirmation = false;
+
+$scope.toggleCheckoutAndConfirmation = function() {
+    $scope.checkoutAndConfirmation = !$scope.checkoutAndConfirmation;
+};
+//----------------------------------------------------------------------
+
+
+// submit order
+
+$scope.submitOrder = function(user, total) {
+    service.submitOrder(user, total);
+        $scope.user_name.cart = [];
+        service.updateUser($scope.user_name);
+};
+
+// display order data
+
+$scope.displayOrder = function() {
+    service.displayOrder().then(function(response) {
+        $scope.order = response;
+    });
+};
+
+$scope.displayOrder();
 
 });  // closing controller tag

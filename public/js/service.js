@@ -48,4 +48,28 @@ this.updateUser = function(user) {
 //-----------------------------------------------------------
 
 
+// Add order to database
+
+this.submitOrder = function(user, total) {
+    return $http ({
+        method: 'POST',
+        url: '/order',
+        data: {orderTotal: total, user: user._id, items: user.cart}
+    }).then(function(response) {
+        return response.data;
+    });
+};
+
+// display order
+
+this.displayOrder = function() {
+    return $http ({
+        method: 'GET',
+        url: '/order'
+    }).then(function(response) {
+        console.log(response.data);
+        return response.data;
+    });
+};
+
 });  // closing service tag

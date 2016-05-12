@@ -3,6 +3,10 @@
     <p id= "tagline">Where trails are made</p>
 </div>
 
+<div ng-show="toggleLogin" class="shop_order_header">
+    <P>Dirt Waves</p>
+</div>
+
 <div class="login_logo">
     <img ng-hide="toggleLogin" ng-click="toggleLoginOnClick()" src="img/sprocket.png"></img>
 </div>
@@ -14,7 +18,6 @@
 
 <div ng-show="toggleLogin" ng-click="toggleLoginOnClick()" class="login_input_container">
     <div class="signup">
-        <p class="product_title">Dirt Waves</p>
         <p>sign up & login<br>
         <input placeholder="username"></input>
         <input placeholder="password"></input><br>

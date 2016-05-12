@@ -168,7 +168,7 @@ module.exports = {
     },
 
     displayOrdersOnDatabase: function(request, response, next) {
-        Order.find(function(error, serverResponse) {
+        Order.find().populate("items.id").populate({path: "user", select: "name"}).exec(function(error, serverResponse) {
             if (error) {
                 return response.status(500).json(error);
             }

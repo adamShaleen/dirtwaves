@@ -12,21 +12,28 @@
     <p ng-show="current_user">You are logged in as: {{user_name.name}}</p>
 </div>
 
-<div class="checkout_item_container">
+<div ng-hide="checkoutAndConfirmation" class="checkout_item_container">
     <p class="product_title">Order Summary</p>
         <div ng-repeat="product in user_name.cart">
             <p>{{product.id.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qty:{{product.qty}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i ng-click="addQty(product)" class="fa fa-plus-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i ng-click="removeQty(product)" class="fa fa-minus-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${{product.id.price}} each&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i ng-click="removeItemFromCart(product)" class="fa fa-times"></i></p>
         </div>
 </div>
 
-    <hr id="hr">
+    <hr ng-hide="checkoutAndConfirmation" id="hr">
 
-<div class="order_confirm_container">
-    <p>Subtotal $</p>
-    <p>tax and shipping $</p>
-    <p>total $</p>
-    <button class="btn">Submit Order</button>
+<div ng-hide="checkoutAndConfirmation" class="order_confirm_container">
+    <p>Subtotal {{subtotal | currency}}</p>
+    <p>tax and $10 UPS shipping {{taxAndShipping | currency}}</p>
+    <p>total {{total | currency}}</p>
+    <button ng-click="submitOrder(user_name, total); toggleCheckoutAndConfirmation(); createConfirmation()" class="btn">Submit Order</button>
 </div>
 
+<div ng-show="checkoutAndConfirmation" class="checkout_item_container">
+    <p class="product_title">Order Confirmation</p>
+    <p>Your order number is DW{{order}}</p>
+    <p>Your order is estimated to arrive on </p>
+</div>
+
+<div ng-show="checkoutAndConfirmation" class="shop_image"></div>
 
 <footer-contact></footer-contact>
