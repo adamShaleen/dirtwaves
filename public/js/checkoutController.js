@@ -93,19 +93,13 @@ $scope.toggleCheckoutAndConfirmation = function() {
 // submit order
 
 $scope.submitOrder = function(user, total) {
-    service.submitOrder(user, total);
+    service.submitOrder(user, total).then(function(response) {
+        console.log(response, $scope.user_name);
         $scope.user_name.cart = [];
+        $scope.user_name.orders.push(response._id);
         service.updateUser($scope.user_name);
-};
-
-// display order data
-
-$scope.displayOrder = function() {
-    service.displayOrder().then(function(response) {
-        $scope.order = response;
     });
 };
 
-$scope.displayOrder();
 
 });  // closing controller tag

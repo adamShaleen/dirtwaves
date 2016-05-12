@@ -67,7 +67,6 @@ this.displayOrder = function() {
         method: 'GET',
         url: '/order'
     }).then(function(response) {
-        console.log(response.data);
         return response.data;
     });
 };

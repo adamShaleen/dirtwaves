@@ -167,8 +167,11 @@ module.exports = {
         });
     },
 
+        // displays the most recent order for the user
+
     displayOrdersOnDatabase: function(request, response, next) {
         Order.find().populate("items.id").populate({path: "user", select: "name"}).exec(function(error, serverResponse) {
+            console.log("user.name");
             if (error) {
                 return response.status(500).json(error);
             }
