@@ -32,6 +32,18 @@ $scope.addQty = function(product) {
     }
 };
 
+// remove 1 qty
+
+$scope.removeQty = function(product) {
+    for (var i = 0; i < $scope.user_name.cart.length; i++) {
+        if ($scope.user_name.cart[i] === product) {
+            if ($scope.user_name.cart[i].qty !== 1) {
+                $scope.user_name.cart[i].qty--;
+                service.updateUser($scope.user_name);
+            }
+        }
+    }
+};
 
 // remove single item from shopping cart on checkout page
 
