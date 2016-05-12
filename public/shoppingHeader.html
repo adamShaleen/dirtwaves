@@ -59,6 +59,8 @@
     </div>
 </div>
 
+<p ng-hide="product_img_toggle" id="shopTagline">Where trails are made</p>
+
 <div ng-hide="product_img_toggle" class="shop_image"></div>
 
 <div ng-show="product_img_toggle" class="product_content_container">
@@ -69,10 +71,4 @@
         <div id="product_price"><p>${{selectedProduct.price}}</p></div>
         <button ng-click="toggleAddToCartModal(selectedProduct._id); addToCart(selectedProduct._id)" ng-hide="addToCartModal[selectedProduct._id]" class="btn">add to cart</button>
         <div ng-show="addToCartModal[selectedProduct._id]" id="add_to_cart"><p>added to cart!</p></div>
-</div>
-
-<p ng-hide="product_img_toggle" id="shopTagline">Where trails are made</p>
-
-<div ng-hide="product_img_toggle" class="shop_logo">
-    <img src="img/sprocket.png"></img>
 </div>

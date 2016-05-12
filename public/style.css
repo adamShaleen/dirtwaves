@@ -47,6 +47,7 @@
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     margin: auto;
     z-index: 100;
     color: white;
@@ -127,12 +128,13 @@
 }
 
 .shop_image {
-    background-image: url('img/clintRoast.jpg');
+    position: absolute;
+    bottom: 0;
+    background-image: url('img/wave.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 200px;
-    margin-top: 10px;
+    height: 58vh;
 }
 
 .product_content_container {
