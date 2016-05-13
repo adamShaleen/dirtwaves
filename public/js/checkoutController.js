@@ -112,7 +112,9 @@ $scope.submitOrder = function(user, total) {
             $scope.displayUser();
         });
     });
-}
+} else {
+    alert('Your shopping cart is empty');
+    }
 };
 
 $scope.findArrivalDate = function(date){

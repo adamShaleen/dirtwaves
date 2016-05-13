@@ -1,4 +1,4 @@
-<div class="shop_order_header">
+<div ng-click="deselectCategory(); toggleProductImg()" class="shop_order_header">
     <P>Dirt Waves</p>
 </div>
 
@@ -14,7 +14,7 @@
 
 <div class="navBar_container">
 <div class="navBar dropdown">
-    <p class="dropdown-toggle" data-toggle="dropdown">Frames</p>
+    <p ng-click="selectCategory('frame')" ng-class="{highlight: selectedCategory === 'frame'}" class="dropdown-toggle" data-toggle="dropdown">Frames</p>
         <ul class="dropdown-menu">
             <div ng-repeat="frame in frames">
             <li ng-click="selectProduct(frame)">{{frame.title}}</li>
@@ -23,7 +23,7 @@
     </div>
 
 <div class="navBar dropdown">
-    <p class="dropdown-toggle" data-toggle="dropdown">Bars</p>
+    <p ng-click="selectCategory('bar')" ng-class="{highlight: selectedCategory === 'bar'}" class="dropdown-toggle" data-toggle="dropdown">Bars</p>
         <ul class="dropdown-menu">
             <div ng-repeat="bar in bars">
             <li ng-click="selectProduct(bar)">{{bar.title}}</li>
@@ -32,7 +32,7 @@
     </div>
 
 <div class="navBar dropdown">
-    <p class="dropdown-toggle" data-toggle="dropdown">Stems</p>
+    <p ng-click="selectCategory('stem')" ng-class="{highlight: selectedCategory === 'stem'}" class="dropdown-toggle" data-toggle="dropdown">Stems</p>
         <ul class="dropdown-menu">
             <div ng-repeat="stem in stems">
             <li ng-click="selectProduct(stem)">{{stem.title}}</li>
@@ -41,7 +41,7 @@
     </div>
 
 <div class="navBar dropdown">
-    <p class="dropdown-toggle" data-toggle="dropdown">Tires</p>
+    <p ng-click="selectCategory('tire')" ng-class="{highlight: selectedCategory === 'tire'}" class="dropdown-toggle" data-toggle="dropdown">Tires</p>
         <ul class="dropdown-menu">
             <div ng-repeat="tire in tires">
             <li ng-click="selectProduct(tire)">{{tire.title}}</li>
@@ -50,7 +50,7 @@
     </div>
 
 <div class="navBar dropdown">
-    <p class="dropdown-toggle" data-toggle="dropdown">Acc.</p>
+    <p ng-click="selectCategory('accessories')" ng-class="{highlight: selectedCategory === 'accessories'}" class="dropdown-toggle" data-toggle="dropdown">Acc.</p>
         <ul class="dropdown-menu">
             <div ng-repeat="accessories in acc">
             <li ng-click="selectProduct(accessories)">{{accessories.title}}</li>
@@ -59,9 +59,9 @@
     </div>
 </div>
 
-<div ng-hide="product_img_toggle" class="shop_image"></div>
+<div ng-click="deselectCategory()" ng-hide="product_img_toggle" class="shop_image"></div>
 
-<div ng-show="product_img_toggle" class="product_content_container">
+<div  ng-show="product_img_toggle" class="product_content_container">
         <div class="product_title"><p>{{selectedProduct.title}}</p></div>
         <div id="product_image"><img ng-src="{{selectedProduct.image}}"></img></div>
         <div id="product_description"><p>{{selectedProduct.description}}</p></div>

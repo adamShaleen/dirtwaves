@@ -70,6 +70,18 @@ $scope.selectProduct = function(product) {
         $scope.product_img_toggle = !$scope.product_img_toggle;
     }
 };
+
+// highlight product category
+
+$scope.selectCategory = function(category) {
+        $scope.selectedCategory = category;
+};
+
+$scope.deselectCategory = function() {
+    $scope.selectedCategory = null;
+};
+
+
 //-------------------------------------------------------------
 
 // toggle between background image and product content

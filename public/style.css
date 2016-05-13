@@ -50,17 +50,15 @@
     position: fixed;
     width: 100%;
     height: max-content;
-    top: 0;
+    top: 30vh;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
     z-index: 100;
-    color: white;
-    background-color: black;
+    color: black;
     font-family: Amatic SC;
     font-size: 8vw;
-    border: 1px solid white;
 }
 
 .signup, .login, .fbLogin {
@@ -71,7 +69,7 @@
 
 .fbLogin a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .login_input_container input {
@@ -79,7 +77,8 @@
     width: 100px;
     text-align: center;
     font-family: Amatic SC;
-    font-size: 12px;
+    font-size: 18px;
+    color: black;
 }
 
 .shop_order_header {
@@ -123,6 +122,11 @@
     font-family: Amatic SC;
     font-size: 6vw;
     margin-top: 10px;
+}
+
+.highlight {
+    color: white;
+    background: rgb(73, 74, 74);
 }
 
 .navBar li {

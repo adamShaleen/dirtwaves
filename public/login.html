@@ -1,10 +1,6 @@
-<div ng-hide="toggleLogin" class="loginTitleContainer">
+<div ng-click="toggleLoginOnClick()" class="loginTitleContainer">
     <img src="img/logo.png"></img>
     <p id= "tagline">Where trails are made</p>
-</div>
-
-<div ng-show="toggleLogin" class="shop_order_header">
-    <P>Dirt Waves</p>
 </div>
 
 <div ng-hide="toggleLogin" class="shop_image"></div>
@@ -13,10 +9,9 @@
     <button class="btn" ng-click="toggleLoginOnClick()">Login</button>
 </div>
 
-
-<div ng-show="toggleLogin" ng-click="toggleLoginOnClick()" class="login_input_container">
+<div ng-show="toggleLogin" class="login_input_container">
     <div class="signup">
-        <p>sign up & login<br>
+        <p>sign up&nbsp;&nbsp;/&nbsp;&nbsp;login<br>
         <input placeholder="email" type="email"></input>
         <input placeholder="password" type="password"></input><br>
     </div>
@@ -28,49 +23,3 @@
 
 
 <footer-contact></footer-contact>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--I have no idea how to use any of this FB stuff-->
-<!-- <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '984834464904949',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script> -->
-
-<!-- <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div> -->
