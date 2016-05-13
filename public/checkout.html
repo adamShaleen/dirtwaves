@@ -9,7 +9,7 @@
 </div>
 
 <div class="user_status_text">
-    <p ng-show="current_user">You are logged in as: {{user_name.name}}</p>
+    <p ng-show="current_user">You are logged in as: {{user_name.name || user_name.email}}</p>
 </div>
 
 <div ng-hide="checkoutAndConfirmation" class="checkout_item_container">

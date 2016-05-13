@@ -1,4 +1,4 @@
-angular.module('dirtWaves').controller('shopController', function($scope, service) {
+angular.module('dirtWaves').controller('shopController', function($scope, $state, service) {
 
 // toggle user icon text
 $scope.current_user = false;

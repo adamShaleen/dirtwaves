@@ -5,11 +5,11 @@
 <div class="user_status_icons">
         <button class="btn"><i ng-click="toggle_current_user()" class="fa fa-user fa-2x"></i></button>
         <button class="btn"><a ui-sref="checkout"<i class="fa fa-shopping-cart fa-2x"></i></a></button>
-        <button class="btn"><a href="/#/login"><i class="fa fa-times fa-2x"></i></a></button>
+        <button ng-click="logout()" class="btn"><i class="fa fa-times fa-2x"></i></button>
 </div>
 
 <div class="user_status_text">
-    <p ng-show="current_user">You are logged in as: {{user_name.name}}</p>
+    <p ng-show="current_user">You are logged in as: {{user_name.name || user_name.email}}</p>
 </div>
 
 <div class="navBar_container">

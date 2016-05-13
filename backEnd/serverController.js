@@ -37,6 +37,7 @@ module.exports = {
     },
 
     login: function(request, response, next) {
+        console.log(request.user);
         User.findById(request.user._id).populate('cart.id').populate("orders").exec(function(error, serverResponse) {
             if (error) {
                 return response.status(500).json(error);
@@ -51,7 +52,6 @@ module.exports = {
         console.log(request.user);
         request.user = null;
         console.log(request.user);
-
         response.status(200).json({LoggedOut: true});
     },
 

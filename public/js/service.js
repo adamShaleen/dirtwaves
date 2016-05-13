@@ -47,7 +47,7 @@ this.logoutLocal = function() {
 this.logout = function() {
     return $http ({
         method: 'GET',
-        url: '/logout/current_user'
+        url: '/logout'
     }).then(function(response) {
         return response.data;
     });
