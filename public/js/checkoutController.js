@@ -1,4 +1,4 @@
-angular.module("dirtWaves").controller("checkoutController", function($scope, service) {
+angular.module("dirtWaves").controller("checkoutController", function($scope, service, $state) {
 
     // toggle user icon text
     $scope.current_user = false;
@@ -20,6 +20,15 @@ angular.module("dirtWaves").controller("checkoutController", function($scope, se
 
     $scope.displayUser();
     //-----------------------------------------------------------
+
+// logout
+
+$scope.logout = function() {
+    service.logout().then(function(response) {
+        $state.go('login');
+    });
+};
+
 
 
 // add qty 1
@@ -85,7 +94,9 @@ $scope.displaytotals = function() {
 $scope.checkoutAndConfirmation = false;
 
 $scope.toggleCheckoutAndConfirmation = function() {
+    if ($scope.user_name.cart.length) {
     $scope.checkoutAndConfirmation = !$scope.checkoutAndConfirmation;
+    }
 };
 //----------------------------------------------------------------------
 
@@ -93,6 +104,7 @@ $scope.toggleCheckoutAndConfirmation = function() {
 // submit order and display the most recent order on confirmation page
 
 $scope.submitOrder = function(user, total) {
+    if ($scope.user_name.cart.length) {
     service.submitOrder(user, total).then(function(response) {
         $scope.user_name.cart = [];
         $scope.user_name.orders.push(response._id);
@@ -100,6 +112,7 @@ $scope.submitOrder = function(user, total) {
             $scope.displayUser();
         });
     });
+}
 };
 
 $scope.findArrivalDate = function(date){

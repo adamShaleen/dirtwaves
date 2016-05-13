@@ -24,6 +24,14 @@ module.exports = {
         });
     },
 
+    logout: function(request, response, next) {
+        console.log(request.user);
+        request.user = null;
+        console.log(request.user);
+
+        response.status(200).json({LoggedOut: true});
+    },
+
     addNewUserToDatabase: function(request, response, next) {
         var newUser = new User(request.body);
         newUser.save(request.body, function(error, serverResponse) {

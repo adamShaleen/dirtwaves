@@ -1,5 +1,18 @@
 angular.module('dirtWaves').service('service', function($http) {
 
+
+// logout
+this.logout = function() {
+    return $http ({
+        method: 'GET',
+        url: '/logout/current_user'
+    }).then(function(response) {
+        return response.data;
+    });
+};
+
+
+
 // display current user--------------------------------------
 this.displayUser = function() {
     return $http ({

@@ -83,6 +83,9 @@ app.get('/shop', serverController.facebookLogin);
 // user login
 app.get('/login/current_user', serverController.login);
 
+// user logout
+app.get('/logout/current_user', serverController.logout);
+
 // Add new user
 app.post('/login/user', serverController.addNewUserToDatabase);
 
