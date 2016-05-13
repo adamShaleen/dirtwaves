@@ -15,7 +15,7 @@
 <div class="navBar_container">
 <div class="navBar dropdown">
     <p ng-click="selectCategory('frame')" ng-class="{highlight: selectedCategory === 'frame'}" class="dropdown-toggle" data-toggle="dropdown">Frames</p>
-        <ul class="dropdown-menu">
+        <ul id="frames" class="dropdown-menu">
             <div ng-repeat="frame in frames">
             <li ng-click="selectProduct(frame)">{{frame.title}}</li>
         </div>
@@ -24,7 +24,7 @@
 
 <div class="navBar dropdown">
     <p ng-click="selectCategory('bar')" ng-class="{highlight: selectedCategory === 'bar'}" class="dropdown-toggle" data-toggle="dropdown">Bars</p>
-        <ul class="dropdown-menu">
+        <ul id="bars" class="dropdown-menu">
             <div ng-repeat="bar in bars">
             <li ng-click="selectProduct(bar)">{{bar.title}}</li>
         </div>
@@ -33,7 +33,7 @@
 
 <div class="navBar dropdown">
     <p ng-click="selectCategory('stem')" ng-class="{highlight: selectedCategory === 'stem'}" class="dropdown-toggle" data-toggle="dropdown">Stems</p>
-        <ul class="dropdown-menu">
+        <ul id="stems" class="dropdown-menu">
             <div ng-repeat="stem in stems">
             <li ng-click="selectProduct(stem)">{{stem.title}}</li>
         </div>
@@ -42,7 +42,7 @@
 
 <div class="navBar dropdown">
     <p ng-click="selectCategory('tire')" ng-class="{highlight: selectedCategory === 'tire'}" class="dropdown-toggle" data-toggle="dropdown">Tires</p>
-        <ul class="dropdown-menu">
+        <ul id="tires" class="dropdown-menu">
             <div ng-repeat="tire in tires">
             <li ng-click="selectProduct(tire)">{{tire.title}}</li>
         </div>
@@ -51,7 +51,7 @@
 
 <div class="navBar dropdown">
     <p ng-click="selectCategory('accessories')" ng-class="{highlight: selectedCategory === 'accessories'}" class="dropdown-toggle" data-toggle="dropdown">Acc.</p>
-        <ul class="dropdown-menu">
+        <ul id="acc" class="dropdown-menu">
             <div ng-repeat="accessories in acc">
             <li ng-click="selectProduct(accessories)">{{accessories.title}}</li>
         </div>

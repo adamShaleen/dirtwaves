@@ -21,7 +21,7 @@ angular.module("dirtWaves").controller("checkoutController", function($scope, se
     $scope.displayUser();
     //-----------------------------------------------------------
 
-// logout
+// logout user
 
 $scope.logout = function() {
     service.logout().then(function(response) {
@@ -29,7 +29,7 @@ $scope.logout = function() {
     });
 };
 
-
+//--------------------------------------------------------------
 
 // add qty 1
 
@@ -119,10 +119,11 @@ $scope.submitOrder = function(user, total) {
 
 $scope.findArrivalDate = function(date){
 
-    var dateNum = Date.parse(new Date(date));
-    dateNum += 259200000;
-    return new Date(dateNum);
+    var dateNum = Date.parse(new Date(date));       // todays date turned into milliseconds
+    dateNum += 259200000;                           // adds 3 days worth of milliseconds
+    return new Date(dateNum);                       // turning number back into date
 
 };
+//------------------------------------------------------------------------
 
 });  // closing controller tag

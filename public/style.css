@@ -133,6 +133,25 @@
     padding-left: 5px;
 }
 
+#frames {
+    min-width: 35vw;
+}
+
+#bars {
+    min-width: 35vw;
+}
+#stems {
+    min-width: 35vw;
+}
+#tires {
+    min-width: 35vw;
+    left: -26vw;
+}
+#acc {
+    min-width: 35vw;
+    left: -28vw;
+}
+
 .shop_image {
     position: absolute;
     bottom: 0;
@@ -210,9 +229,16 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: rgba(0, 0, 0, 1);
-    color: white;
     padding-top: 5px;
     padding-bottom: 5px;
     position: fixed;
     bottom: 0px;
+}
+
+.footerContainer a {
+    color: white;
+}
+
+.footerContainer a:visited {
+    color: white;
 }
