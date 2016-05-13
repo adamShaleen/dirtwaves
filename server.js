@@ -4,6 +4,7 @@ var cors = require('cors');
 var session = require('express-session');
 var mongoose = require('mongoose');
 var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var keys = require('./keys.js');
 var serverController = require('./backend/serverController.js');
@@ -12,6 +13,12 @@ var Order = require('./backend/models/order.js');
 var Product = require('./backend/models/product.js');
 var User = require('./backend/models/user.js');
 var app = express();
+
+// POLICIES //
+var isAuthed = function(req, res, next) {
+  if (!req.isAuthenticated()) return res.status(401).send();
+  return next();
+};
 
 app.use(session({
     secret: keys.sessionSecret,
@@ -32,8 +39,39 @@ mongoose.set('debug', true);
 
 app.use(express.static(__dirname + '/public'));
 
+
+// Local Auth protocols-------------------------------------
+// var localAuth = function() {
+    passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+}, function(email, password, done) {
+    console.log("hit");
+    User.findOne({email: email}).exec(function(error, user) {
+        console.log(error, user);
+        if(error) done(error);
+        if(!user) return done(null, false);
+        if(user.verifyPassword(password)) return done(null, user);
+        return done(null, false);
+    });
+}));
+
+passport.serializeUser(function(user, done) {
+    done(null, user._id);
+});
+
+passport.deserializeUser(function(_id, done) {
+    User.findById(_id, function(error, user) {
+        done(error, user);
+    });
+});
+
+// };
+
+
 // Facebook login protocols---------------------------------
-passport.use(new FacebookStrategy({
+// var facebookAuth = function() {
+    passport.use(new FacebookStrategy({
     clientID: keys.facebookID,
     clientSecret: keys.facebookSecret,
     callbackURL: "http://localhost:3000/login/facebook/callback"
@@ -56,10 +94,12 @@ passport.use(new FacebookStrategy({
         }
     });
 }));
+// };
 
-app.get('/login/facebook', passport.authenticate('facebook'));
+app.get('/login/facebook',
+    passport.authenticate('facebook'));
 
-app.get('/login/facebook/callback', passport.authenticate('facebook', {
+app.get('/login/facebook/callback',passport.authenticate('facebook', {
     successRedirect: '/shop',
     failureRedirect: '/login'
 }));
@@ -75,9 +115,26 @@ passport.deserializeUser(function(object, done) {
 
 // USER---------------------------------------------------
 
-// add endpoint for passport local authenticate.  point to a seperate controller.  AFter MVP.
+app.post('/users', serverController.register);
 
-// Get facebook login
+app.get('/me', isAuthed, serverController.me);
+
+app.put('/users/:id', isAuthed, serverController.update);
+
+app.post('/login', passport.authenticate('local', {
+}), function(request, response, next) {
+    response.send({login: true});
+});
+
+app.get('/logout', function(request, response, next) {
+    request.logout();
+    return response.status(200).send('logged out');
+});
+
+//------------------------------------------------------
+
+// FB login endpoints
+
 app.get('/shop', serverController.facebookLogin);
 
 // user login
