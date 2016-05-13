@@ -7,9 +7,7 @@
     <P>Dirt Waves</p>
 </div>
 
-<div class="login_logo">
-    <img ng-hide="toggleLogin" ng-click="toggleLoginOnClick()" src="img/sprocket.png"></img>
-</div>
+<div ng-hide="toggleLogin" class="shop_image"></div>
 
 <div ng-hide="toggleLogin" class="loginButton">
     <button class="btn" ng-click="toggleLoginOnClick()">Login</button>
@@ -19,8 +17,8 @@
 <div ng-show="toggleLogin" ng-click="toggleLoginOnClick()" class="login_input_container">
     <div class="signup">
         <p>sign up & login<br>
-        <input placeholder="username"></input>
-        <input placeholder="password"></input><br>
+        <input placeholder="email" type="email"></input>
+        <input placeholder="password" type="password"></input><br>
     </div>
     <div class="fbLogin">
         <p>or login with Facebook<br>

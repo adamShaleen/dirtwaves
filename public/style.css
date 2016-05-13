@@ -5,17 +5,16 @@
 
 .loginTitleContainer {
     text-align: center;
-    margin-top: 20px;
     z-index: -10;
 }
 
 .loginTitleContainer img {
-    width: 100vw;
+    width: 96vw;
 }
 
 #tagline {
     font-family: Cedarville Cursive;
-    font-size: 8vw;
+    font-size: 7vw;
 }
 
 .login_logo {
@@ -37,7 +36,14 @@
 .loginButton {
     font-family: Amatic SC;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 20vh;
+    color: black;
+}
+
+.loginButton button {
+    background-color: white;
+    border: 1px solid black;
+    font-size: 20px;
 }
 
 .login_input_container {
@@ -66,10 +72,6 @@
 .fbLogin a {
     text-decoration: none;
     color: white;
-}
-
-.fbLogin: hover {
-    cursor: pointer;
 }
 
 .login_input_container input {
@@ -135,6 +137,7 @@
     background-size: cover;
     width: 100%;
     height: 58vh;
+    z-index: -100;
 }
 
 .product_content_container {

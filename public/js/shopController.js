@@ -19,6 +19,15 @@ $scope.displayUser = function() {
 $scope.displayUser();
 //-----------------------------------------------------------
 
+// logout
+
+$scope.logout = function() {
+    service.logout().then(function(response) {
+        $state.go('login');
+    });
+};
+
+
 // display products
 
 $scope.frames = [];
