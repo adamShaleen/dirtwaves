@@ -7,6 +7,11 @@
         <h3>Products</h3>
         <hr>
         <input ng-model="sortProduct" type="text" placeholder="Product Search"></input>
+        <input type="text" placeholder="New Product title"></input>
+        <input type="text" placeholder="New Product desc."></input>
+        <input type="text" placeholder="New Product price"></input>
+        <input type="text" placeholder="New Product img file"></input><br>
+        <button class="btn">Add new Product</button>
         <p ng-repeat="product in products | filter: sortProduct">{{product.title}}</p>
     </div>
 
@@ -14,14 +19,14 @@
         <h3>Users</h3>
         <hr>
         <input ng-model="sortUser" type="text" placeholder="User Search"></input>
-        <p ng-repeat="users in allUsers | filter: sortUser">{{users.name || users.email}}</p>
+        <p ng-repeat="users in allUsers | filter: sortUser">{{users.name || users.email}}&nbsp;&nbsp;<button class="btn">Toggle Admin</button></p>
     </div>
 
     <div id="admin_content_orders" class="admin_content">
         <h3>Orders</h3>
         <hr>
         <input ng-model="sortOrder" type="number" placeholder="Order Search"></input>
-        <p ng-repeat="order in allOrders | filter: sortOrder">{{order._id}}&nbsp;/&nbsp;{{order.orderDate | date: yyyy-MM-dd}}</p>
+        <p ng-repeat="order in allOrders | filter: sortOrder">{{order._id}}<br>{{order.orderDate | date: yyyy-MM-dd}}</p>
     </div>
 
 </div>

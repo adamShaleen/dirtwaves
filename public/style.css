@@ -266,6 +266,7 @@
     justify-content: center;
     font-family: Amatic SC;
     font-size: 3vw;
+    text-align: center;
 }
 
 .admin_content {
@@ -290,4 +291,9 @@
 
 .admin_content h3 {
     font-size: 6vw;
+}
+
+.admin_content_container button {
+    border: 1px solid black;
+    font-size: 14px;
 }
