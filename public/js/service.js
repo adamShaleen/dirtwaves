@@ -64,6 +64,17 @@ this.displayUser = function() {
         return response.data;
     });
 };
+
+// display all users
+this.displayAllUsers = function() {
+    return $http ({
+        method: 'GET',
+        url: '/login/user'
+    }).then(function(response) {
+        return response.data;
+    });
+};
+
 //-----------------------------------------------------------
 
 // display products

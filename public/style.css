@@ -65,7 +65,14 @@
     width: max-content;
     margin: auto;
     text-align: center;
+}
 
+ #register_button {
+    border: 1px solid black;
+}
+
+#login_button {
+    border: 1px solid black;
 }
 
 .fbLogin a {
@@ -80,10 +87,6 @@
     font-family: Amatic SC;
     font-size: 18px;
     color: black;
-}
-
-.login_input_container p {
-    margin: 0;
 }
 
 .shop_order_header {
@@ -246,4 +249,45 @@
 
 .footerContainer a:visited {
     color: white;
+}
+
+.admin_header {
+    background-color: black;
+    color: white;
+    font-family: Amatic SC;
+    font-size: 10vw;
+    text-align: center;
+    width: 100%;
+}
+
+.admin_content_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: Amatic SC;
+    font-size: 3vw;
+}
+
+.admin_content {
+    margin: auto;
+    padding: 5vw;
+}
+
+#admin_content_products {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#admin_content_users {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#admin_content_orders {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.admin_content h3 {
+    font-size: 6vw;
 }

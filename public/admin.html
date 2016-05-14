@@ -1,20 +1,27 @@
-<div class="shop_order_header">
-    <P>Dirt Waves</p>
+<div class="admin_header">
+    <P>Dirt Waves Admin</p>
 </div>
 
-<div class="user_status_icons">
-        <button class="btn"><i class="fa fa-user fa-2x"></i></button>
-        <button class="btn"><i class="fa fa-bicycle fa-2x"></i></button>
-        <button class="btn"><i class="fa fa-shopping-cart fa-2x"></i></button>
+<div class="admin_content_container">
+    <div id="admin_content_products" class="admin_content">
+        <h3>Products</h3>
+        <hr>
+        <input ng-model="sortProduct" type="text" placeholder="Product Search"></input>
+        <p ng-repeat="product in products | filter: sortProduct">{{product.title}}</p>
+    </div>
+
+    <div id="admin_content_users" class="admin_content">
+        <h3>Users</h3>
+        <hr>
+        <input ng-model="sortUser" type="text" placeholder="User Search"></input>
+        <p ng-repeat="users in allUsers | filter: sortUser">{{users.name || users.email}}</p>
+    </div>
+
+    <div id="admin_content_orders" class="admin_content">
+        <h3>Orders</h3>
+        <hr>
+        <input ng-model="sortOrder" type="number" placeholder="Order Search"></input>
+        <p ng-repeat="order in allOrders | filter: sortOrder">{{order._id}}&nbsp;/&nbsp;{{order.orderDate | date: yyyy-MM-dd}}</p>
+    </div>
+
 </div>
-
-<div class="product_content_container">
-    <p class="product_title">Admin Setup</p>
-    <p>Select category</p>
-</div>
-
-
-
-<div class="shop_image"></div>
-
-<footer-contact></footer-contact>
