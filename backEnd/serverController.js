@@ -10,7 +10,6 @@ module.exports = {
     register: function(request, response, next) {
         User.create(request.body, function(error, serverResponse) {
             if (error) return response.status(500).send(error);
-            // newUser = response.toObject();
             serverResponse.password = null;
             response.status(200).json(serverResponse);
         });

@@ -55,4 +55,39 @@ $scope.displayAllOrders = function() {
 
 $scope.displayAllOrders();
 
+//---------------------------------------------------
+
+
+// selecting a product on the admin view
+$scope.selectProduct = function(product) {
+    $scope.selected = product;
+};
+
+// add new item to database on admin view
+$scope.newProduct = {};
+$scope.addNewProduct = function(newProduct) {
+    service.addProductToAdmin(newProduct).then(function(response) {
+        $scope.displayProducts();
+        $scope.product = {};
+    });
+};
+
+// update item to database on admin view
+$scope.selected = {};
+$scope.updateProduct = function(product) {
+    service.updateProductToAdmin(product).then(function(response) {
+        $scope.displayProducts();
+        $scope.selected = {};
+    });
+};
+
+// remove item to database on admin view
+$scope.selected = {};
+$scope.removeProduct = function(product) {
+    service.removeProductToAdmin(product).then(function(response) {
+        $scope.displayProducts();
+        $scope.selected = {};
+    });
+};
+
 });  // closing controller tag.

@@ -76,16 +76,48 @@ this.displayAllUsers = function() {
 };
 
 //-----------------------------------------------------------
+//PRODUCTS
 
-// display products
+// display products from database
 this.displayProducts = function() {
     return $http ({
-        method: "GET",
+        method: 'GET',
         url: '/products'
     }).then(function(response) {
         return response.data;
     });
 };
+
+// add new product to database on admin view
+this.addProductToAdmin = function(newProduct) {
+    return $http ({
+        method: 'POST',
+        url: '/products',
+        data: newProduct
+    }).then(function(response) {
+        return response.data;
+    });
+};
+
+
+// update product to database on admin view
+this.updateProductToAdmin = function(product) {
+    return $http ({
+        method: 'PUT',
+        url: '/products/' + product._id,
+        data: product
+    });
+};
+
+
+// remove product to database on admin view
+this.removeProductToAdmin = function(product) {
+    return $http ({
+        method: 'DELETE',
+        url: '/products/' + product._id,
+    });
+};
+
 //------------------------------------------------------------
 
 // add item to cart
