@@ -2,31 +2,38 @@
     <P>Dirt Waves Admin</p>
 </div>
 
+<div class="admin_btn_text"><p>Select Category to view</p></div>
+
+<div class="admin_btn">
+    <button ng-click="toggle_admin_products()" class="btn">Show Products</button>
+    <button ng-click="toggle_admin_users()" class="btn">Show Users</button>
+    <button ng-click="toggle_admin_orders()" class="btn">Show Orders</button>
+</div>
+
 <div class="admin_content_container">
-    <div id="admin_content_products" class="admin_content">
+
+    <div ng-show="admin_products" id="admin_content_products" class="admin_content">
         <h3>Products</h3>
-        <hr>
         <input ng-model="sortProduct" type="text" placeholder="Product Search"></input>
         <input type="text" placeholder="New Product title"></input>
+        <input type="text" placeholder="New product cat."></inpu><br>
         <input type="text" placeholder="New Product desc."></input>
         <input type="text" placeholder="New Product price"></input>
-        <input type="text" placeholder="New Product img file"></input><br>
+        <input type="text" placeholder="New Product img"></input><br>
         <button class="btn">Add new Product</button>
-        <p ng-repeat="product in products | filter: sortProduct">{{product.title}}</p>
+        <p ng-repeat="product in products | filter: sortProduct">{{product.title}}|{{product.category}}|{{product.description}}|${{product.price}}</p>
     </div>
 
-    <div id="admin_content_users" class="admin_content">
+    <div ng-show="admin_users" id="admin_content_users" class="admin_content">
         <h3>Users</h3>
-        <hr>
         <input ng-model="sortUser" type="text" placeholder="User Search"></input>
-        <p ng-repeat="users in allUsers | filter: sortUser">{{users.name || users.email}}&nbsp;&nbsp;<button class="btn">Toggle Admin</button></p>
+        <p ng-repeat="users in allUsers | filter: sortUser">{{users.name || users.email}}</p>
     </div>
 
-    <div id="admin_content_orders" class="admin_content">
+    <div ng-show="admin_orders" id="admin_content_orders" class="admin_content">
         <h3>Orders</h3>
-        <hr>
-        <input ng-model="sortOrder" type="number" placeholder="Order Search"></input>
-        <p ng-repeat="order in allOrders | filter: sortOrder">{{order._id}}<br>{{order.orderDate | date: yyyy-MM-dd}}</p>
+        <input ng-model="sortOrder" placeholder="Order Search"></input>
+        <p ng-repeat="order in allOrders | filter: sortOrder">Order#: DW{{order._id}}&nbsp;&nbsp;{{order.orderDate | date: yyyy-MM-dd}}</p>
     </div>
 
 </div>

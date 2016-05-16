@@ -84,7 +84,7 @@
     border: 1px solid black;
     width: 100px;
     text-align: center;
-    font-family: Amatic SC;
+    /*font-family: Amatic SC;*/
     font-size: 18px;
     color: black;
 }
@@ -133,8 +133,7 @@
 }
 
 .highlight {
-    color: white;
-    background: rgb(73, 74, 74);
+    text-decoration: underline;
 }
 
 .navBar li {
@@ -252,26 +251,66 @@
 }
 
 .admin_header {
-    background-color: black;
-    color: white;
     font-family: Amatic SC;
-    font-size: 10vw;
     text-align: center;
-    width: 100%;
+    margin: auto;
+    font-size: 5vw;
+    width: 70%;
+    border-bottom: 1px solid black;
+}
+
+.admin_btn_text {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 3vw;
+}
+
+.admin_btn {
+    font-family: Amatic SC;
+    text-align: center;
+    font-size: 14px;
+}
+
+.admin_btn button {
+    border: 1px solid black;
 }
 
 .admin_content_container {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-around;
     font-family: Amatic SC;
     font-size: 3vw;
     text-align: center;
 }
 
+.admin_content_container button {
+    border: 1px solid black;
+    font-size: 14px;
+}
+
 .admin_content {
     margin: auto;
     padding: 5vw;
+}
+
+.admin_content h3 {
+    font-size: 3vw;
+}
+
+.admin_content p {
+    font-family: monospace;
+    font-size: 10px;
+    text-align: justify;
+}
+
+.admin_content input {
+    font-size: 1vw;
+    font-family: monospace;
+}
+
+.admin_content input:hover {
+    cursor: pointer;
 }
 
 #admin_content_products {
@@ -287,13 +326,4 @@
 #admin_content_orders {
     margin-top: 0;
     padding-top: 0;
-}
-
-.admin_content h3 {
-    font-size: 6vw;
-}
-
-.admin_content_container button {
-    border: 1px solid black;
-    font-size: 14px;
 }
