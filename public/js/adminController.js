@@ -71,7 +71,7 @@ $scope.newProduct = {};
 $scope.addNewProduct = function(newProduct) {
     service.addProductToAdmin(newProduct).then(function(response) {
         $scope.displayProducts();
-        $scope.product = {};
+        $scope.newProduct = {};
     });
 };
 
@@ -115,5 +115,29 @@ $scope.displayTrails = function() {
 
 $scope.displayTrails();
 
+$scope.trails = {};
+$scope.addTrails = function(trails) {
+    trailsService.addTrails(trails).then(function(response) {
+        $scope.displayTrails();
+        $scope.trails = {};
+    });
+};
+
+$scope.selected = {};
+$scope.updateTrails = function(trails) {
+    trailsService.updateTrails(trails).then(function(response) {
+        $scope.displayTrails();
+        $scope.selected = {};
+    });
+};
+
+
+$scope.selected = {};
+$scope.deleteTrails = function(trails) {
+    trailsService.deleteTrails(trails).then(function(response) {
+        $scope.displayTrails();
+        $scope.selected = {};
+    });
+};
 
 });  // closing controller tag.

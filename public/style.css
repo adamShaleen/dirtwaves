@@ -168,6 +168,19 @@
     width: 100%;
     height: 58vh;
     z-index: -100;
+    animation-name: wave;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes wave {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: 20px;
+    }
 }
 
 .product_content_container {
