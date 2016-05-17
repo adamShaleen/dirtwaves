@@ -2,6 +2,7 @@ var Cart = require('./models/cart.js');
 var Order = require('./models/order.js');
 var Product = require('./models/product.js');
 var User = require('./models/user.js');
+var Trails = require('./models/trails.js');
 
 module.exports = {
 
@@ -242,5 +243,65 @@ module.exports = {
             }
         });
     },
+
+
+// TRAILS---------------------------------------------------------------
+
+addTrails: function(request, response, next) {
+    var newTrails = new Trails(request.body);
+    newTrails.save(request.body, function(error, serverResponse) {
+        if (error) {
+            return response.status(500).json(error);
+        }
+        else {
+            return response.json(serverResponse);
+        }
+    });
+},
+
+getTrails: function(request, response, next) {
+    Trails.find(function(error, serverResponse) {
+        if (error) {
+            return response.status(500).json(error);
+        }
+        else {
+            return response.json(serverResponse);
+        }
+    });
+},
+
+getTrailsById: function(request, response, next) {
+    Trails.findById(request.params.id, request.body, function(error, serverResponse) {
+        if (error) {
+            return response.status(500).json(error);
+        }
+        else {
+            return response.json(serverResponse);
+        }
+    });
+},
+
+updateTrailsById: function(request, response, next) {
+    Trails.findByIdAndUpdate(request.params.id, request.body, function(error, serverResponse) {
+        if (error) {
+            return response.status(500).json(error);
+        }
+        else {
+            return response.json(serverResponse);
+        }
+    });
+},
+
+deleteTrails: function(request, response, next) {
+    Trails.findByIdAndRemove(request.params.id, request.body, function(error, serverResponse) {
+        if (error) {
+            return response.status(500).json(error);
+        }
+        else {
+            return response.json(serverResponse);
+        }
+    });
+},
+
 
 };  // exports closing tag

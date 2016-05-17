@@ -1,0 +1,22 @@
+<div class="shop_order_header">
+    <P>Dirt Waves</p>
+</div>
+
+<div class="trails_title_text"><p>Trails Database</p></div>
+
+<input ng-model="trail" class="trails_search" type="text" placeholder="Search by City/State"></input>
+
+<div ng-repeat="trail in trails | filter: trail" class="trails_collection_container">
+    <p>{{trail.name}}</p>
+    <p>{{trail.city}}, {{trail.state}}&nbsp;{{trail.zipcode}}</p>
+    <p>Locals: {{trail.contact}}</p>
+    <p>Description: {{trail.description}}</p>
+</div>
+
+
+
+<div class="footerContainer">
+    <a href="https://www.facebook.com/adamshaleen" target="_blank"><i class="fa fa-facebook-square fa-2x"></a></i>
+    <a href="https://twitter.com/CanYouDigItBMX" target="_blank"><i class="fa fa-twitter-square fa-2x"></a></i>
+    <a href="https://www.instagram.com/twelfthstreet_trails/" target="_blank"><i class="fa fa-instagram fa-2x"></a></i>
+</div>

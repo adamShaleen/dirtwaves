@@ -24,6 +24,12 @@ angular.module('dirtWaves', ['ui.router'])
             url: '/superSecretAdminStuff',
             templateUrl: 'admin.html',
             controller: 'adminController',
+        })
+
+        .state('trails', {
+            url:'/trails',
+            templateUrl: 'trails.html',
+            controller: 'trailsController'
         });
 
 

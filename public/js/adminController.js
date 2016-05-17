@@ -1,10 +1,11 @@
-angular.module('dirtWaves').controller('adminController', function($scope, service) {
+angular.module('dirtWaves').controller('adminController', function($scope, service, trailsService) {
 
 $scope.admin_products = false;
 
 $scope.toggle_admin_products = function() {
     $scope.admin_users = false;
     $scope.admin_orders = false;
+    $scope.admin_trails = false;
     $scope.admin_products = !$scope.admin_products;
 
 };
@@ -25,6 +26,7 @@ $scope.admin_users = false;
 $scope.toggle_admin_users = function() {
         $scope.admin_products = false;
         $scope.admin_orders = false;
+        $scope.admin_trails = false;
         $scope.admin_users = !$scope.admin_users;
 };
 
@@ -44,6 +46,7 @@ $scope.admin_orders = false;
 $scope.toggle_admin_orders = function() {
     $scope.admin_products = false;
     $scope.admin_users = false;
+    $scope.admin_trails = false;
     $scope.admin_orders = !$scope.admin_orders;
 };
 
@@ -89,5 +92,28 @@ $scope.removeProduct = function(product) {
         $scope.selected = {};
     });
 };
+
+
+
+//TRAILS---------------------------------------------------------
+
+$scope.admin_trails = false;
+
+$scope.toggle_trails = function() {
+    $scope.admin_users = false;
+    $scope.admin_orders = false;
+    $scope.admin_products = false;
+    $scope.admin_trails = !$scope.admin_trails;
+};
+
+
+$scope.displayTrails = function() {
+    trailsService.getTrails().then(function(response) {
+        $scope.trails = response;
+    });
+};
+
+$scope.displayTrails();
+
 
 });  // closing controller tag.

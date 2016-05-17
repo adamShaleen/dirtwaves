@@ -341,3 +341,35 @@
     margin-top: 0;
     padding-top: 0;
 }
+
+#admin_content_trails {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.trails_title_text {
+    font-family: Amatic SC;
+    font-size: 10vw;
+    text-align: center;
+    margin: auto;
+    border-bottom: 1px solid black;
+    width: 70%;
+}
+
+.trails_search {
+    text-align: center;
+    font-family: Amatic SC;
+    font-size: 6vw;
+    margin-top: 20px;
+    margin-left: 30vw;
+    border: 1px solid black;
+}
+
+.trails_collection_container {
+    margin: auto;
+    text-align: justify;
+    font-family: Amatic SC;
+    font-size: 6vw;
+    margin: 20px;
+    margin-bottom: 50px;
+}

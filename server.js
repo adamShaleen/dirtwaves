@@ -12,6 +12,7 @@ var Cart = require('./backend/models/cart.js');
 var Order = require('./backend/models/order.js');
 var Product = require('./backend/models/product.js');
 var User = require('./backend/models/user.js');
+var Trails = require('./backend/models/trails.js');
 var app = express();
 
 // POLICIES //
@@ -197,8 +198,26 @@ app.put('/order/:id', serverController.updateOrderOnDatabaseById);
 // delete Order on database by id
 app.delete('/order/:id', serverController.deleteOrderOnDatabaseById);
 
+// TRAILS DATABASE---------------------------------------------------------
+
+// add trails to database
+app.post('/trails', serverController.addTrails);
+
+// // display trails on database
+app.get('/trails', serverController.getTrails);
+
+// get trails by id
+app.get('/trails/:id', serverController.getTrailsById);
+
+// update trails by ID
+app.put('/trails/:id', serverController.updateTrailsById);
+//
+// // delete trails by ID
+app.delete('/trails/:id', serverController.deleteTrails);
 
 
+
+// LISTEN-----------------------------------------------------------------
 
 app.listen(3000, function() {
     console.log("Party on port 3000");

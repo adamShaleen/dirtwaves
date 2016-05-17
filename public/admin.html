@@ -5,9 +5,10 @@
 <div class="admin_btn_text"><p>Select Category to view</p></div>
 
 <div class="admin_btn">
-    <button ng-click="toggle_admin_products()" class="btn">Show Products</button>
-    <button ng-click="toggle_admin_users()" class="btn">Show Users</button>
-    <button ng-click="toggle_admin_orders()" class="btn">Show Orders</button>
+    <button ng-click="toggle_admin_products()" class="btn">Products</button>
+    <button ng-click="toggle_admin_users()" class="btn">Users</button>
+    <button ng-click="toggle_admin_orders()" class="btn">Orders</button>
+    <button ng-click="toggle_trails()" class="btn">Trails</button>
 </div>
 
 <div class="admin_content_container">
@@ -15,11 +16,11 @@
     <div ng-show="admin_products" id="admin_content_products" class="admin_content">
         <h3>Products</h3>
         <input ng-model="sortProduct" type="text" placeholder="Product Search"></input><br>
-        <input ng-model="newProduct.title" type="text" placeholder="New Product title"></input>
-        <input ng-model="newProduct.category" type="text" placeholder="New product cat."></inpu>
-        <input ng-model="newProduct.description" type="text" placeholder="New Product desc."></input>
-        <input ng-model="newProduct.price" type="text" placeholder="New Product price"></input>
-        <input ng-model="newProduct.image" type="text" placeholder="New Product img"></input><br>
+        <input ng-model="newProduct.title" type="text" placeholder="New product title"></input>
+        <input ng-model="newProduct.category" type="text" placeholder="New product cat."></input>
+        <input ng-model="newProduct.description" type="text" placeholder="New product desc."></input>
+        <input ng-model="newProduct.price" type="text" placeholder="New product price"></input>
+        <input ng-model="newProduct.image" type="text" placeholder="New product img"></input><br>
         <button ng-click="addNewProduct(newProduct)" class="btn">Add new Product</button><br>
 
         <input ng-model="selected.title" type="text" placeholder="Update/remove title"></input>
@@ -41,6 +42,27 @@
         <h3>Orders</h3>
         <input ng-model="sortOrder" placeholder="Order Search"></input>
         <p ng-repeat="order in allOrders | filter: sortOrder">Order#: DW{{order._id}}&nbsp;&nbsp;{{order.orderDate | date: yyyy-MM-dd}}</p>
+    </div>
+
+    <div ng-show="admin_trails" id="admin_content_trails" class="admin_trails_container admin_content">
+        <h3>Trails</h3>
+        <input type="text" placeholder="Trails Search"></input><br>
+        <input type="text" placeholder="New trails name"></input>
+        <input type="text" placeholder="New trails city"></input>
+        <input type="text" placeholder="New trails state"></input>
+        <input type="number" placeholder="New trails zipcode"></input>
+        <input type="text" placeholder="New trails contact"></input>
+        <input type="text" placeholder="New trails desc."></input><br>
+        <button class="btn">Add new Trails</button><br>
+
+        <input ng-model="selected.name" type="text" placeholder="Update/remove name"></input>
+        <input ng-model="selected.city" type="text" placeholder="Update/remove city"></input>
+        <input ng-model="selected.state" type="text" placeholder="Update/remove state"></input>
+        <input ng-model="selected.zipcode" type="number" placeholder="Update/remove zipcode"></input>
+        <input ng-model="selected.contact" type="text" placeholder="Update/remove contact"></input>
+        <input ng-model="selected.description" type="text" placeholder="Update/remove desc."></input><br>
+        <button class="btn update_remove_btn">Update trails</button><button class="btn update_remove_btn">Remove trails</button>
+        <p class="admin_product_text" ng-class="{admin_select: selected === trail}" ng-repeat="trail in trails | filter: trail" ng-click="selectProduct(trail)">{{trail.name}}<br>{{trail.city}}<br>{{trail.state}}<br>{{trail.zipcode}}<br>{{trail.contact}}<br>{{trail.description}}</p>
     </div>
 
 </div>
