@@ -1,4 +1,4 @@
-angular.module('dirtWaves', ['ui.router'])
+angular.module('dirtWaves', ['ui.router', 'ngAnimate'])
 
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider

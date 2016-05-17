@@ -46,6 +46,38 @@
     font-size: 20px;
 }
 
+.login_wave {
+    position: absolute;
+    bottom: 0;
+    background-image: url('img/wave.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 58vh;
+    z-index: -100;
+    animation-name: wave;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.login_wave.ng-hide {
+    opacity: 0;
+}
+
+@keyframes wave {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 20px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
 .login_input_container {
     position: fixed;
     width: 100%;
@@ -59,6 +91,12 @@
     color: black;
     font-family: Amatic SC;
     font-size: 8vw;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.login_input_container.ng-hide {
+    opacity: 0;
 }
 
 .signup, .login, .fbLogin {
@@ -84,7 +122,6 @@
     border: 1px solid black;
     width: 100px;
     text-align: center;
-    /*font-family: Amatic SC;*/
     font-size: 18px;
     color: black;
 }
@@ -132,6 +169,16 @@
     margin-top: 10px;
 }
 
+.open > .dropdown-menu {
+    opacity: 1;
+}
+
+.dropdown-menu {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: block !important;
+}
+
 .highlight {
     text-decoration: underline;
 }
@@ -168,19 +215,6 @@
     width: 100%;
     height: 58vh;
     z-index: -100;
-    animation-name: wave;
-    animation-duration: 2.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes wave {
-    from {
-        bottom: 0;
-    }
-    to {
-        bottom: 20px;
-    }
 }
 
 .product_content_container {

@@ -61,9 +61,14 @@ $scope.displayAllOrders();
 //---------------------------------------------------
 
 
-// selecting a product on the admin view
+// selecting a item on the admin view
 $scope.selectProduct = function(product) {
     $scope.selected = product;
+};
+
+// deselecting a item
+$scope.deselectProduct = function() {
+    $scope.selected = {};
 };
 
 // add new item to database on admin view

@@ -28,7 +28,7 @@
         <input ng-model="selected.description" type="text" placeholder="Update/remove desc."></input>
         <input ng-model="selected.price" type="text" placeholder="Update/remove price"></input>
         <input ng-model="selected.image" type="text" placeholder="Update/remove img"></input><br>
-        <button ng-click="updateProduct(selected)" class="btn update_remove_btn">Update Product</button><button ng-click="removeProduct(selected)" class="btn update_remove_btn">Remove Product</button>
+        <button ng-click="deselectProduct()" class="btn update_remove_btn">Deselect</button><button ng-click="updateProduct(selected)" class="btn update_remove_btn">Update Product</button><button ng-click="removeProduct(selected)" class="btn update_remove_btn">Remove Product</button>
         <p class="admin_product_text" ng-class="{admin_select: selected === product}" ng-repeat="product in products | filter: sortProduct" ng-click="selectProduct(product)">{{product.title}}|{{product.category}}|{{product.description}}|${{product.price}}|{{product.image}}</p>
     </div>
 
@@ -61,7 +61,7 @@
         <input ng-model="selected.zipcode" type="number" placeholder="Update/remove zipcode"></input>
         <input ng-model="selected.contact" type="text" placeholder="Update/remove contact"></input>
         <input ng-model="selected.description" type="text" placeholder="Update/remove desc."></input><br>
-        <button class="btn update_remove_btn" ng-click="updateTrails(selected)">Update trails</button><button ng-click="deleteTrails(selected)" class="btn update_remove_btn">Remove trails</button>
+        <button ng-click="deselectProduct()" class="btn update_remove_btn">Deselect</button><button class="btn update_remove_btn" ng-click="updateTrails(selected)">Update trails</button><button ng-click="deleteTrails(selected)" class="btn update_remove_btn">Remove trails</button>
         <p class="admin_product_text" ng-class="{admin_select: selected === trail}" ng-repeat="trail in trails" ng-click="selectProduct(trail)">{{trail.name}}<br>{{trail.city}}<br>{{trail.state}}<br>{{trail.zipcode}}<br>{{trail.contact}}<br>{{trail.description}}</p>
     </div>
 
