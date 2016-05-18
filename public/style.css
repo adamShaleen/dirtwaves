@@ -12,9 +12,26 @@
     width: 96vw;
 }
 
+.large_logo {
+    font-family: Amatic SC;
+    font-size: 20vw;
+    padding-top: 32vh;
+    display: none;
+    color: white;
+    text-shadow: 4px 4px black;
+}
+
 #tagline {
-    font-family: Cedarville Cursive;
+    font-family: Cedarville cursive;
     font-size: 7vw;
+}
+
+.large_tagline {
+    font-size: 5vw;
+    font-family: Amatic SC;
+    text-align: right;
+    margin-right: 10px;
+    display: none;
 }
 
 .login_logo {
@@ -277,13 +294,6 @@
     margin-right: 10px;
 }
 
-/*#hr {
-    margin: auto;
-    width: 200px;
-    margin-top: 0;
-    margin-bottom: 5px;
-}*/
-
 .order_confirm_container {
     font-family: Amatic SC;
     font-size: 6vw;
@@ -444,24 +454,50 @@
 
 /*iPad 768 x 1024*/
 @media (min-width: 768px) {
-    .loginTitleContainer img {
-        width: 78vw;
+    .login_background_image {
+        background: url('/img/robbo.jpg');
+        background-size: cover;
+        background-position: right;
+        height: 100vh;
     }
-    .loginButton button {
-        font-size: 50px;
+    .small_logo {
+        display: none;
+    }
+    .large_logo {
+        display: block;
+    }
+    #tagline {
+        font-size: 5vw;
+        font-family: Amatic SC;
+        color: white;
+        text-shadow: 2px 2px black;
+        margin-top: -5vh;
+    }
+    .loginButton {
+        margin-top: 0vh;
     }
     .login_input_container {
-        top: 43vh;
-        font-size: 7vw;
-    }
-    .login_input_container input {
-        font-size: 30px;
+        font-size: 6vw;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        color: white;
+        text-shadow: 2px 2px black;
     }
     #register_button {
-        font-size: 25px;
+        color: black;
     }
     #login_button {
-        font-size: 25px;
+        color: black;
+    }
+    .fbLogin a {
+        color: white;
+        text-shadow: 2px 2px black;
+    }
+    .login_wave {
+        display: none;
     }
     #frames {
         font-size: 3vw;
@@ -489,6 +525,9 @@
         font-size: 4vw;
         margin-left: 15vw;
         margin-right: 15vw;
+    }
+    #product_image {
+        border: 1px solid black;
     }
     .product_content_container img {
         width: 350px;
@@ -540,5 +579,77 @@
     }
     .navBar {
         margin-top: 0;
+    }
+}
+
+@media (min-width: 800px) {
+    .navBar_container {
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    .navBar {
+        font-size: 4vw;
+    }
+    .product_title {
+        font-size: 5vw;
+    }
+    .product_content_container {
+        font-size: 3vw;
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+    .product_content_container img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 900px) {
+    .navBar_container {
+        margin-left: 7vw;
+        margin-right: 7vw;
+    }
+    .product_content_container {
+        font-size: 20px;
+    }
+    #product_description {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+}
+
+@media (min-width: 1000px) {
+    .login_input_container {
+        font-size: 5vw;
+    }
+}
+
+@media (min-width: 1100px) {
+    .large_logo p {
+        margin-top: -4%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .large_logo p {
+        margin-top: -7%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .large_logo p {
+        margin-top: -9%;
+    }
+    #tagline {
+        margin-top: -10vh;
+    }
+    .login_input_container {
+        font-size: 3vw;
+    }
+}
+
+@media (min-width: 1600px) {
+    .large_logo p {
+        margin-top: -10%;
     }
 }

@@ -1,6 +1,10 @@
+
+<div class="login_background_image">
+
 <div ng-click="toggleLoginOnClick()" class="loginTitleContainer">
-    <img src="img/logo.png"></img>
-    <p id= "tagline">Where trails are made</p>
+    <div class="small_logo"><img src="img/logo.png"></img></div>
+    <div ng-hide="toggleLogin" class="large_logo"><p>Dirt Waves</p></div>
+    <div><p ng-hide="toggleLogin" id= "tagline">Where trails are made</p></div>
 </div>
 
 <div ng-hide="toggleLogin" class="login_wave"></div>
@@ -23,5 +27,8 @@
     </div>
 </div>
 
+
+<!--login background image-->
+</div>
 
 <footer-contact></footer-contact>
