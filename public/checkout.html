@@ -2,6 +2,10 @@
     <P>Dirt Waves</p>
 </div>
 
+<div class="user_status_icons_large">
+    <p>You are logged in as {{user_name.name || user_name.email}}&nbsp;&nbsp;||&nbsp;&nbsp;</p><a ui-sref="shop"><p>Proceed to Catalog&nbsp;<i class="fa fa-shopping-bag"></i></a></p>&nbsp;&nbsp;||&nbsp;&nbsp;<p ng-click="logout()">Logout&nbsp;<i class="fa fa-times"></i></p>
+</div>
+
 <div class="user_status_icons">
         <button class="btn"><i ng-click="toggle_current_user()" class="fa fa-user fa-2x"></i></button>
         <button class="btn"><a ui-sref="shop"<i class="fa fa-shopping-bag fa-2x"></i></a></button>
@@ -19,12 +23,12 @@
         </div>
 </div>
 
-    <hr ng-hide="checkoutAndConfirmation" id="hr">
+    <!-- <hr ng-hide="checkoutAndConfirmation" id="hr"> -->
 
 <div ng-hide="checkoutAndConfirmation" class="order_confirm_container">
     <p>Subtotal {{subtotal | currency}}</p>
     <p>tax and $10 UPS shipping {{taxAndShipping | currency}}</p>
-    <p>total {{total | currency}}</p>
+    <p id="total">total {{total | currency}}</p>
     <button id="submit_order_button" ng-click="submitOrder(user_name, total); toggleCheckoutAndConfirmation(); createConfirmation()" class="btn">Submit Order</button><br><br><br>
 </div>
 

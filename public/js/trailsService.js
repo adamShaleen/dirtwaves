@@ -36,4 +36,25 @@ this.deleteTrails = function(trails) {
     });
 };
 
+// current user
+this.displayUser = function() {
+    return $http ({
+        method: 'GET',
+        url: '/login/current_user'
+    }).then(function(response) {
+        return response.data;
+    });
+};
+
+// logout
+this.logout = function() {
+    return $http ({
+        method: 'GET',
+        url: '/logout'
+    }).then(function(response) {
+        return response.data;
+    });
+};
+
+
 });  // closing service tag

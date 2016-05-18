@@ -146,6 +146,20 @@
     color: black;
 }
 
+.user_status_icons_large {
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: Amatic SC;
+    font-size: 3vw;
+    margin-right: 10px;
+}
+
+.user_status_icons_large a {
+    text-decoration: none;
+    color: black;
+}
+
 .user_status_text {
     text-align: center;
     font-family: Amatic SC;
@@ -263,12 +277,12 @@
     margin-right: 10px;
 }
 
-#hr {
+/*#hr {
     margin: auto;
     width: 200px;
     margin-top: 0;
     margin-bottom: 5px;
-}
+}*/
 
 .order_confirm_container {
     font-family: Amatic SC;
@@ -477,8 +491,8 @@
         margin-right: 15vw;
     }
     .product_content_container img {
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 350px;
     }
     .product_title {
         font-size: 8vw;
@@ -490,9 +504,41 @@
         font-size: 3vw;
     }
     #thankyou {
-        font-size: 13vw;
+        font-size: 10vw;
     }
     .checkout_item_container {
-        margin-top: 5vh;
+        font-size: 4vw;
+        margin-left: 15vw;
+        margin-right: 15vw;
+        text-align: justify;
+    }
+    .order_confirm_container {
+        font-size: 5vw;
+        text-align: justify;
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
+    .user_status_icons {
+        display: none;
+    }
+    .shop_order_header {
+        font-size: 10vw;
+        text-align: left;
+        padding-left: 40px;
+    }
+    #total {
+        font-size: 7vw;
+    }
+    #trails_header {
+        font-size: 10vw;
+        text-align: left;
+        padding-left: 40px;
+    }
+    .user_status_icons_large {
+        display: flex;
+    }
+    .navBar {
+        margin-top: 0;
     }
 }
