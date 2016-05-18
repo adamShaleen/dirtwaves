@@ -67,6 +67,24 @@
 
 <div ng-click="deselectCategory()" ng-hide="product_img_toggle" class="shop_image"></div>
 
+    <div ng-hide="product_img_toggle" class="featured_text"><p>The best names in trails</p></div>
+
+<div ng-hide="product_img_toggle" class="featured_container_1">
+    <div id="featured_1"></div>
+</div>
+
+<div ng-hide="product_img_toggle" class="featured_container_2">
+    <div id="featured_2"></div>
+</div>
+
+<div ng-hide="product_img_toggle" class="featured_container_3">
+    <div id="featured_3"></div>
+</div>
+
+<div ng-hide="product_img_toggle" class="featured_container_4">
+    <div id="featured_4"></div>
+</div>
+
 <div  ng-show="product_img_toggle" class="product_content_container">
         <div class="product_title"><p>{{selectedProduct.title}}</p></div>
         <div id="product_image"><img ng-src="{{selectedProduct.image}}"></img></div>

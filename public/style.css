@@ -27,11 +27,21 @@
 }
 
 .large_tagline {
-    font-size: 5vw;
+    font-size: 10vw;
     font-family: Amatic SC;
     text-align: right;
     margin-right: 10px;
     display: none;
+    background: url('img/tagline_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+.large_tagline p {
+    padding-right: 10px;
 }
 
 .login_logo {
@@ -166,15 +176,18 @@
 .user_status_icons_large {
     display: none;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     font-family: Amatic SC;
     font-size: 3vw;
     margin-right: 10px;
+    background: black;
+    width: 100vw;
+    color: white;
 }
 
 .user_status_icons_large a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .user_status_text {
@@ -236,6 +249,10 @@
 #acc {
     min-width: 26vw;
     left: -18vw;
+}
+
+.featured_text {
+    display: none;
 }
 
 .shop_image {
@@ -473,6 +490,12 @@
         text-shadow: 2px 2px black;
         margin-top: -5vh;
     }
+    .large_tagline {
+        display: block;
+    }
+    .large_tagline p {
+        margin: 0;
+    }
     .loginButton {
         margin-top: 0vh;
     }
@@ -514,6 +537,12 @@
     #acc {
         font-size: 3vw;
     }
+    #product_description {
+        margin-top: 3vh;
+    }
+    .footerContainer {
+        position: relative;
+    }
     .footerContainer i {
         font-size: 3em;
     }
@@ -536,8 +565,81 @@
     .product_title {
         font-size: 8vw;
     }
+    .shop_image {
+        display: none;
+    }
     #add_to_cart_button {
         font-size: 3vw;
+        margin-bottom: 18vh;
+    }
+    .featured_text {
+        font-family: Amatic SC;
+        text-align: center;
+        font-size: 8vw;
+    }
+    .featured_container_1 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    #featured_1 {
+        background: url('img/deluxe_featured.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vh;
+        height: 22vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .featured_container_2 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    #featured_2 {
+        background: url('img/tree_featured.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vh;
+        height: 22vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .featured_container_3 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    #featured_3 {
+        background: url('img/demo_featured.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vh;
+        height: 22vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .featured_container_4 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    #featured_4 {
+        background: url('img/profile_featured.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vh;
+        height: 22vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     #submit_order_button {
         font-size: 3vw;
@@ -562,9 +664,12 @@
         display: none;
     }
     .shop_order_header {
-        font-size: 10vw;
+        font-size: 7vw;
         text-align: left;
         padding-left: 40px;
+    }
+    .shop_order_header p {
+        margin: 0;
     }
     #total {
         font-size: 7vw;
@@ -588,7 +693,7 @@
         margin-right: 5vw;
     }
     .navBar {
-        font-size: 4vw;
+        font-size: 3vw;
     }
     .product_title {
         font-size: 5vw;
@@ -605,6 +710,18 @@
 }
 
 @media (min-width: 900px) {
+    #featured_1 {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+    #featured_2 {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+    #featured_3 {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
     .navBar_container {
         margin-left: 7vw;
         margin-right: 7vw;
@@ -621,6 +738,18 @@
 @media (min-width: 1000px) {
     .login_input_container {
         font-size: 5vw;
+    }
+    #featured_1 {
+        margin-left: 18vw;
+        margin-right: 18vw;
+    }
+    #featured_2 {
+        margin-left: 18vw;
+        margin-right: 18vw;
+    }
+    #featured_3 {
+        margin-left: 18vw;
+        margin-right: 18vw;
     }
 }
 
