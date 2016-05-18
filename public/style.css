@@ -188,22 +188,23 @@
 }
 
 #frames {
-    min-width: 35vw;
+    min-width: 25vw;
 }
 
 #bars {
-    min-width: 35vw;
+    min-width: 25vw;
 }
 #stems {
-    min-width: 35vw;
+    min-width: 25vw;
+    left: -8vw;
 }
 #tires {
-    min-width: 35vw;
-    left: -26vw;
+    min-width: 25vw;
+    left: -16vw;
 }
 #acc {
-    min-width: 35vw;
-    left: -28vw;
+    min-width: 26vw;
+    left: -18vw;
 }
 
 .shop_image {
@@ -275,6 +276,10 @@
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+#thankyou {
+    font-size: 15vw;
 }
 
 .footerContainer {
@@ -419,4 +424,75 @@
     font-size: 6vw;
     margin: 20px;
     margin-bottom: 50px;
+}
+/*=============================================*/
+/*Media Queries*/
+
+/*iPad 768 x 1024*/
+@media (min-width: 768px) {
+    .loginTitleContainer img {
+        width: 78vw;
+    }
+    .loginButton button {
+        font-size: 50px;
+    }
+    .login_input_container {
+        top: 43vh;
+        font-size: 7vw;
+    }
+    .login_input_container input {
+        font-size: 30px;
+    }
+    #register_button {
+        font-size: 25px;
+    }
+    #login_button {
+        font-size: 25px;
+    }
+    #frames {
+        font-size: 3vw;
+    }
+    #bars {
+        font-size: 3vw;
+    }
+    #stems {
+        font-size: 3vw;
+    }
+    #tires {
+        font-size: 3vw;
+    }
+    #acc {
+        font-size: 3vw;
+    }
+    .footerContainer i {
+        font-size: 3em;
+    }
+
+    .trails_contact {
+        font-size: 3em;
+    }
+    .product_content_container {
+        font-size: 4vw;
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+    .product_content_container img {
+        width: 250px;
+        height: 250px;
+    }
+    .product_title {
+        font-size: 8vw;
+    }
+    #add_to_cart_button {
+        font-size: 3vw;
+    }
+    #submit_order_button {
+        font-size: 3vw;
+    }
+    #thankyou {
+        font-size: 13vw;
+    }
+    .checkout_item_container {
+        margin-top: 5vh;
+    }
 }
