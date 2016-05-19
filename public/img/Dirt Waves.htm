@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:3000/#/shop -->
+<html ng-app="dirtWaves" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+        <!--Meta and style links-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./Dirt Waves_files/style.css" media="screen" title="no title" charset="utf-8">
+        <link href="./Dirt Waves_files/css" rel="stylesheet" type="text/css">
+        <link href="./Dirt Waves_files/css(1)" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./Dirt Waves_files/font-awesome.min.css">
+        <link rel="stylesheet" href="./Dirt Waves_files/bootstrap.min.css">
+
+        <!--Favicon-->
+        <link rel="apple-touch-icon" sizes="57x57" href="http://localhost:3000/img/favicon.ico/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="http://localhost:3000/img/favicon.ico/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="http://localhost:3000/img/favicon.ico/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="http://localhost:3000/img/favicon.ico/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://localhost:3000/img/favicon.ico/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="http://localhost:3000/img/favicon.ico/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="http://localhost:3000/img/favicon.ico/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="http://localhost:3000/img/favicon.ico/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:3000/img/favicon.ico/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="http://localhost:3000/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:3000/img/favicon.ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:3000/img/favicon.ico/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:3000/img/favicon.ico/favicon-16x16.png">
+        <link rel="manifest" href="http://localhost:3000/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <title>Dirt Waves</title>
+    <style type="text/css"></style><script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script></head>
+    <body ng-controller="indexController" class="ng-scope" cz-shortcut-listen="true">
+
+        <!-- uiView:  --><ui-view class="ng-scope"><shopping-header class="ng-scope"><div ng-click="deselectCategory(); toggleProductImg()" class="shop_order_header">
+    <div class="large_title_logo"><p style="
+    width: 100vw;
+">Dirt Waves</p></div>
+    <div class="user_status_icons_large"><p class="ng-binding">You are logged in as Adam Shaleen&nbsp;&nbsp;||&nbsp;&nbsp;</p><a ui-sref="checkout" href="http://localhost:3000/#/checkout"></a><p><a ui-sref="checkout" href="http://localhost:3000/#/checkout">Proceed to shopping cart&nbsp;<i class="fa fa-shopping-cart"></i></a></p>&nbsp;&nbsp;||&nbsp;&nbsp;<p ng-click="logout()">Logout&nbsp;<i class="fa fa-times"></i></p></div>
+</div>
+
+<div class="large_tagline"><p>Where trails are made</p></div>
+
+<!-- <div class="user_status_icons_large">
+    <p>You are logged in as {{user_name.name || user_name.email}}&nbsp;&nbsp;||&nbsp;&nbsp;</p><a ui-sref="checkout"><p>Proceed to shopping cart&nbsp;<i class="fa fa-shopping-cart"></i></a></p>&nbsp;&nbsp;||&nbsp;&nbsp;<p ng-click="logout()">Logout&nbsp;<i class="fa fa-times"></i></p>
+</div> -->
+
+<div class="user_status_icons">
+        <button class="btn"><i ng-click="toggle_current_user()" class="fa fa-user fa-2x"></i></button>
+        <button class="btn"><a ui-sref="checkout" <i="" class="fa fa-shopping-cart fa-2x" href="http://localhost:3000/#/checkout"></a></button>
+        <button ng-click="logout()" class="btn"><i class="fa fa-times fa-2x"></i></button>
+</div>
+
+<div class="user_status_text">
+    <p ng-show="current_user" class="ng-binding ng-hide" style="">You are logged in as: Adam Shaleen</p>
+</div>
+
+<div class="navBar_container">
+<div class="navBar dropdown">
+    <p ng-click="selectCategory(&#39;frame&#39;)" ng-class="{highlight: selectedCategory === &#39;frame&#39;}" class="dropdown-toggle" data-toggle="dropdown">Frames</p>
+        <ul id="frames" class="dropdown-menu">
+            <!-- ngRepeat: frame in frames --><div ng-repeat="frame in frames" class="ng-scope">
+            <li ng-click="selectProduct(frame)" class="ng-binding">United TRU</li>
+        </div><!-- end ngRepeat: frame in frames --><div ng-repeat="frame in frames" class="ng-scope">
+            <li ng-click="selectProduct(frame)" class="ng-binding">Deluxe PA</li>
+        </div><!-- end ngRepeat: frame in frames --><div ng-repeat="frame in frames" class="ng-scope">
+            <li ng-click="selectProduct(frame)" class="ng-binding">S&amp;M Creedence</li>
+        </div><!-- end ngRepeat: frame in frames --><div ng-repeat="frame in frames" class="ng-scope">
+            <li ng-click="selectProduct(frame)" class="ng-binding">Fit Hartbreaker</li>
+        </div><!-- end ngRepeat: frame in frames --><div ng-repeat="frame in frames" class="ng-scope">
+            <li ng-click="selectProduct(frame)" class="ng-binding">Mutiny Villij</li>
+        </div><!-- end ngRepeat: frame in frames --><div ng-repeat="frame in frames" class="ng-scope">
+            <li ng-click="selectProduct(frame)" class="ng-binding">FBM Steadfast</li>
+        </div><!-- end ngRepeat: frame in frames --><div ng-repeat="frame in frames" class="ng-scope">
+            <li ng-click="selectProduct(frame)" class="ng-binding">Fit BF</li>
+        </div><!-- end ngRepeat: frame in frames --><div ng-repeat="frame in frames" class="ng-scope">
+            <li ng-click="selectProduct(frame)" class="ng-binding">S&amp;M MOD</li>
+        </div><!-- end ngRepeat: frame in frames -->
+        </ul>
+    </div>
+
+<div class="navBar dropdown">
+    <p ng-click="selectCategory(&#39;bar&#39;)" ng-class="{highlight: selectedCategory === &#39;bar&#39;}" class="dropdown-toggle" data-toggle="dropdown">Bars</p>
+        <ul id="bars" class="dropdown-menu">
+            <!-- ngRepeat: bar in bars --><div ng-repeat="bar in bars" class="ng-scope">
+            <li ng-click="selectProduct(bar)" class="ng-binding">S&amp;M Credence XL</li>
+        </div><!-- end ngRepeat: bar in bars --><div ng-repeat="bar in bars" class="ng-scope">
+            <li ng-click="selectProduct(bar)" class="ng-binding">Deluxe Welcome</li>
+        </div><!-- end ngRepeat: bar in bars -->
+        </ul>
+    </div>
+
+<div class="navBar dropdown">
+    <p ng-click="selectCategory(&#39;stem&#39;)" ng-class="{highlight: selectedCategory === &#39;stem&#39;}" class="dropdown-toggle" data-toggle="dropdown">Stems</p>
+        <ul id="stems" class="dropdown-menu">
+            <!-- ngRepeat: stem in stems --><div ng-repeat="stem in stems" class="ng-scope">
+            <li ng-click="selectProduct(stem)" class="ng-binding">Profile Black</li>
+        </div><!-- end ngRepeat: stem in stems --><div ng-repeat="stem in stems" class="ng-scope">
+            <li ng-click="selectProduct(stem)" class="ng-binding">Profile Silver</li>
+        </div><!-- end ngRepeat: stem in stems -->
+        </ul>
+    </div>
+
+<div class="navBar dropdown">
+    <p ng-click="selectCategory(&#39;tire&#39;)" ng-class="{highlight: selectedCategory === &#39;tire&#39;}" class="dropdown-toggle" data-toggle="dropdown">Tires</p>
+        <ul id="tires" class="dropdown-menu">
+            <!-- ngRepeat: tire in tires --><div ng-repeat="tire in tires" class="ng-scope">
+            <li ng-click="selectProduct(tire)" class="ng-binding">Aitken 2.45</li>
+        </div><!-- end ngRepeat: tire in tires --><div ng-repeat="tire in tires" class="ng-scope">
+            <li ng-click="selectProduct(tire)" class="ng-binding">S&amp;M M.L. 2.45</li>
+        </div><!-- end ngRepeat: tire in tires --><div ng-repeat="tire in tires" class="ng-scope">
+            <li ng-click="selectProduct(tire)" class="ng-binding">S&amp;M T.M. 2.1</li>
+        </div><!-- end ngRepeat: tire in tires -->
+        </ul>
+    </div>
+
+<div class="navBar dropdown">
+    <p ng-click="selectCategory(&#39;accessories&#39;)" ng-class="{highlight: selectedCategory === &#39;accessories&#39;}" class="dropdown-toggle" data-toggle="dropdown">Acc.</p>
+        <ul id="acc" class="dropdown-menu">
+            <!-- ngRepeat: accessories in acc --><div ng-repeat="accessories in acc" class="ng-scope">
+            <li ng-click="selectProduct(accessories)" class="ng-binding">C.M. square</li>
+        </div><!-- end ngRepeat: accessories in acc --><div ng-repeat="accessories in acc" class="ng-scope">
+            <li ng-click="selectProduct(accessories)" class="ng-binding">C.M. Spade</li>
+        </div><!-- end ngRepeat: accessories in acc --><div ng-repeat="accessories in acc" class="ng-scope">
+            <li ng-click="selectProduct(accessories)" class="ng-binding">B.S. Matter t</li>
+        </div><!-- end ngRepeat: accessories in acc --><div ng-repeat="accessories in acc" class="ng-scope">
+            <li ng-click="selectProduct(accessories)" class="ng-binding">Dig Hat</li>
+        </div><!-- end ngRepeat: accessories in acc --><div ng-repeat="accessories in acc" class="ng-scope">
+            <li ng-click="selectProduct(accessories)" class="ng-binding">Muck Boots</li>
+        </div><!-- end ngRepeat: accessories in acc --><div ng-repeat="accessories in acc" class="ng-scope">
+            <li ng-click="selectProduct(accessories)" class="ng-binding">taco cannon</li>
+        </div><!-- end ngRepeat: accessories in acc -->
+        </ul>
+    </div>
+</div>
+
+<div ng-hide="product_img_toggle" class="shop_tagline_small"><p>Where trails are made</p></div>
+
+<div ng-hide="product_img_toggle" class="shop_background_small"></div>
+
+<div class="shop_background_large">
+
+<div ng-hide="product_img_toggle" class="featured_container_1">
+    <div id="featured_1"></div>
+</div>
+
+<div ng-hide="product_img_toggle" class="featured_container_2">
+    <div id="featured_2"></div>
+</div>
+
+<div ng-hide="product_img_toggle" class="featured_container_3">
+    <div id="featured_3"></div>
+</div>
+
+<div ng-hide="product_img_toggle" class="featured_container_4">
+    <div id="featured_4"></div>
+</div>
+
+<div ng-show="product_img_toggle" class="product_content_container ng-hide" style="">
+        <div class="product_title"><p class="ng-binding"></p></div>
+        <div id="product_image"><img></div>
+        <div id="product_description"><p class="ng-binding">&nbsp;&nbsp;$</p></div>
+        <button id="add_to_cart_button" ng-click="toggleAddToCartModal(selectedProduct._id); addToCart(selectedProduct._id)" ng-hide="addToCartModal[selectedProduct._id]" class="btn">add to cart</button>
+        <div ng-show="addToCartModal[selectedProduct._id]" id="add_to_cart" class="ng-hide"><p>added to cart!</p></div>
+</div>
+
+<!--Shop background large-->
+</div>
+</shopping-header>
+
+
+
+<footer-contact class="ng-scope">
+    <div class="footerContainer">
+        <a href="https://www.facebook.com/adamshaleen" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+        <a href="https://twitter.com/CanYouDigItBMX" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+        <a href="https://www.instagram.com/twelfthstreet_trails/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+        <a ui-sref="trails" href="http://localhost:3000/#/trails"><i class="fa fa-globe fa-2x"></i></a>
+    </div>
+</footer-contact>
+</ui-view>
+
+    <!--CDNs and Script files-->
+    <!--Angular-->
+    <script src="./Dirt Waves_files/angular.js"></script>
+    <!--Angular Router-->
+    <script src="./Dirt Waves_files/angular-ui-router.js"></script>
+    <!--Angular Animate-->
+    <script src="./Dirt Waves_files/angular-animate.js"></script>
+    <!--Jquery-->
+    <script src="./Dirt Waves_files/jquery.min.js"></script>
+    <!--Bootstrap-->
+    <script src="./Dirt Waves_files/bootstrap.min.js"></script>
+    <!--Public JS files-->
+    <script src="./Dirt Waves_files/app.js"></script>
+    <script src="./Dirt Waves_files/indexController.js"></script>
+    <script src="./Dirt Waves_files/loginController.js"></script>
+    <script src="./Dirt Waves_files/shopController.js"></script>
+    <script src="./Dirt Waves_files/checkoutController.js"></script>
+    <script src="./Dirt Waves_files/adminController.js"></script>
+    <script src="./Dirt Waves_files/service.js"></script>
+    <script src="./Dirt Waves_files/footerContact.js"></script>
+    <script src="./Dirt Waves_files/shoppingHeader.js"></script>
+    <script src="./Dirt Waves_files/trailsController.js"></script>
+    <script src="./Dirt Waves_files/trailsService.js"></script>
+    
+
+<div id="window-resizer-tooltip" style="display: block;"><a href="http://localhost:3000/#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">768</span> x <span class="tooltipHeight" id="winHeight">1024</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">809</span> x <span class="tooltipHeight" id="vpHeight">1079</span></div></body><script>function inject() {
+
+	var originalOpenWndFnKey = "originalOpenFunction";
+
+			var originalWindowOpenFn 	= window.open,
+			    originalCreateElementFn = document.createElement,
+			    originalCreateEventFn 	= document.createEvent,
+				windowsWithNames = {};
+			var timeSinceCreateAElement = 0;
+			var lastCreatedAElement = null;
+			var fullScreenOpenTime;
+			var parentOrigin = (window.location != window.parent.location) ? document.referrer: document.location;
+
+			window[originalOpenWndFnKey] = window.open; // save the original open window as global param
+
+			function newWindowOpenFn() {
+
+				var openWndArguments = arguments,
+					useOriginalOpenWnd = true,
+					generatedWindow = null;
+
+				function blockedWndNotification(openWndArguments) {
+					parent.postMessage({ type: "blockedWindow", args: JSON.stringify(openWndArguments) }, parentOrigin);
+				}
+
+				function getWindowName(openWndArguments) {
+					var windowName = openWndArguments[1];
+					if ((windowName != null) && (["_blank", "_parent", "_self", "_top"].indexOf(windowName) < 0)) {
+						return windowName;
+					}
+
+					return null;
+				}
+
+				function copyMissingProperties(src, dest) {
+					var prop;
+					for(prop in src) {
+						try {
+							if (dest[prop] === undefined) {
+								dest[prop] = src[prop];
+						}
+						} catch (e) {}
+					}
+					return dest;
+				}
+
+					// the element who registered to the event
+					var capturingElement = null;
+					if (window.event != null) {
+						capturingElement = window.event.currentTarget;
+					}
+
+					if (capturingElement == null) {
+						var caller = openWndArguments.callee;
+						while ((caller.arguments != null) && (caller.arguments.callee.caller != null)) {
+							caller = caller.arguments.callee.caller;
+						}
+						if ((caller.arguments != null) && (caller.arguments.length > 0) && (caller.arguments[0].currentTarget != null)) {
+							capturingElement = caller.arguments[0].currentTarget;
+						}
+					}
+
+				/////////////////////////////////////////////////////////////////////////////////
+				// Blocked if a click on background element occurred (<body> or document)
+				/////////////////////////////////////////////////////////////////////////////////
+
+					if ((capturingElement != null) && (
+							(capturingElement instanceof Window) ||
+							(capturingElement === document) ||
+							(
+								(capturingElement.URL != null) && (capturingElement.body != null)
+							) ||
+							(
+								(capturingElement.nodeName != null) && (
+									(capturingElement.nodeName.toLowerCase() == "body") ||
+									(capturingElement.nodeName.toLowerCase() == "#document")
+								)
+							)
+						)) {
+							window.pbreason = "Blocked a new window opened with URL: " + openWndArguments[0] + " because it was triggered by the " + capturingElement.nodeName + " element";
+							// console.info(window.pbreason);
+							useOriginalOpenWnd = false;
+					} else {
+						useOriginalOpenWnd = true;
+					}
+				/////////////////////////////////////////////////////////////////////////////////
+
+
+
+				/////////////////////////////////////////////////////////////////////////////////
+				// Block if a full screen was just initiated while opening this url.
+				/////////////////////////////////////////////////////////////////////////////////
+
+					// console.info("fullscreen: " + ((new Date()).getTime() - fullScreenOpenTime));
+					// console.info("webkitFullscreenElement: " + document.webkitFullscreenElement);
+					var fullScreenElement = document.webkitFullscreenElement || document.mozFullscreenElement || document.fullscreenElement
+					if ((((new Date()).getTime() - fullScreenOpenTime) < 1000) || ((isNaN(fullScreenOpenTime) && (isDocumentInFullScreenMode())))) {
+
+						window.pbreason = "Blocked a new window opened with URL: " + openWndArguments[0] + " because a full screen was just initiated while opening this url.";
+						// console.info(window.pbreason);
+
+						/* JRA REMOVED
+						if (window[script_params.fullScreenFnKey]) {
+							window.clearTimeout(window[script_params.fullScreenFnKey]);
+						}
+						*/
+
+						if (document.exitFullscreen) {
+							document.exitFullscreen();
+						}
+						else if (document.mozCancelFullScreen) {
+							document.mozCancelFullScreen();
+						}
+						else if (document.webkitCancelFullScreen) {
+							document.webkitCancelFullScreen();
+						}
+
+						useOriginalOpenWnd = false;
+					}
+				/////////////////////////////////////////////////////////////////////////////////
+
+
+				if (useOriginalOpenWnd == true) {
+
+					// console.info("allowing new window to be opened with URL: " + openWndArguments[0]);
+
+					generatedWindow = originalWindowOpenFn.apply(this, openWndArguments);
+
+					// save the window by name, for latter use.
+					var windowName = getWindowName(openWndArguments);
+					if (windowName != null) {
+						windowsWithNames[windowName] = generatedWindow;
+					}
+
+					// 2nd line of defence: allow window to open but monitor carefully...
+
+					/////////////////////////////////////////////////////////////////////////////////
+					// Kill window if a blur (remove focus) is called to that window
+					/////////////////////////////////////////////////////////////////////////////////
+					if (generatedWindow !== window) {
+						var openTime = (new Date()).getTime();
+						var originalWndBlurFn = generatedWindow.blur;
+						generatedWindow.blur = function() {
+							if (((new Date()).getTime() - openTime) < 1000 /* one second */) {
+								window.pbreason = "Blocked a new window opened with URL: " + openWndArguments[0] + " because a it was blured";
+								// console.info(window.pbreason);
+								generatedWindow.close();
+								blockedWndNotification(openWndArguments);
+							} else {
+								// console.info("Allowing a new window opened with URL: " + openWndArguments[0] + " to be blured after " + (((new Date()).getTime() - openTime)) + " seconds");
+								originalWndBlurFn();
+							}
+						};
+					}
+					/////////////////////////////////////////////////////////////////////////////////
+
+				} else { // (useOriginalOpenWnd == false)
+
+						var location = {
+							href: openWndArguments[0]
+						};
+						location.replace = function(url) {
+							location.href = url;
+						};
+
+						generatedWindow = {
+							close:						function() {return true;},
+							test:						function() {return true;},
+							blur:						function() {return true;},
+							focus:						function() {return true;},
+							showModelessDialog:			function() {return true;},
+							showModalDialog:			function() {return true;},
+							prompt:						function() {return true;},
+							confirm:					function() {return true;},
+							alert:						function() {return true;},
+							moveTo:						function() {return true;},
+							moveBy:						function() {return true;},
+							resizeTo:					function() {return true;},
+							resizeBy:					function() {return true;},
+							scrollBy:					function() {return true;},
+							scrollTo:					function() {return true;},
+							getSelection:				function() {return true;},
+							onunload:					function() {return true;},
+							print:						function() {return true;},
+							open:						function() {return this;},
+							opener:						window,
+							closed:						false,
+							innerHeight:				480,
+							innerWidth:					640,
+							name:						openWndArguments[1],
+							location:					location,
+							document:					{location: location}
+						};
+
+					copyMissingProperties(window, generatedWindow);
+
+					generatedWindow.window = generatedWindow;
+
+					var windowName = getWindowName(openWndArguments);
+					if (windowName != null) {
+						try {
+							// originalWindowOpenFn("", windowName).close();
+							windowsWithNames[windowName].close();
+							// console.info("Closed window with the following name: " + windowName);
+						} catch (err) {
+							// console.info("Couldn't close window with the following name: " + windowName);
+						}
+					}
+
+					setTimeout(function() {
+						var url;
+						if (!(generatedWindow.location instanceof Object)) {
+							url = generatedWindow.location;
+						} else if (!(generatedWindow.document.location instanceof Object)) {
+							url = generatedWindow.document.location;
+						} else if (location.href != null) {
+							url = location.href;
+						} else {
+							url = openWndArguments[0];
+						}
+						openWndArguments[0] = url;
+						blockedWndNotification(openWndArguments);
+					}, 100);
+				}
+
+				return generatedWindow;
+			}
+
+
+			/////////////////////////////////////////////////////////////////////////////////
+			// Replace the window open method with Poper Blocker's
+			/////////////////////////////////////////////////////////////////////////////////
+			window.open = function() {
+				try {
+					return newWindowOpenFn.apply(this, arguments);
+				} catch(err) {
+					return null;
+				}
+			};
+			/////////////////////////////////////////////////////////////////////////////////
+
+
+
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////
+			// Monitor dynamic html element creation to prevent generating <a> elements with click dispatching event
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////
+			document.createElement = function() {
+
+					var newElement = originalCreateElementFn.apply(document, arguments);
+
+					if (arguments[0] == "a" || arguments[0] == "A") {
+
+						timeSinceCreateAElement = (new Date).getTime();
+
+						var originalDispatchEventFn = newElement.dispatchEvent;
+
+						newElement.dispatchEvent = function(event) {
+							if (event.type != null && (("" + event.type).toLocaleLowerCase() == "click")) {
+								window.pbreason = "blocked due to an explicit dispatchEvent event with type 'click' on an 'a' tag";
+								// console.info(window.pbreason);
+								parent.postMessage({type:"blockedWindow", args: JSON.stringify({"0": newElement.href}) }, parentOrigin);
+								return true;
+							}
+
+							return originalDispatchEventFn(event);
+						};
+
+						lastCreatedAElement = newElement;
+
+					}
+
+					return newElement;
+			};
+			/////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+			/////////////////////////////////////////////////////////////////////////////////
+			// Block artificial mouse click on frashly created <a> elements
+			/////////////////////////////////////////////////////////////////////////////////
+			document.createEvent = function() {
+				try {
+					if ((arguments[0].toLowerCase().indexOf("mouse") >= 0) && ((new Date).getTime() - timeSinceCreateAElement) <= 50) {
+						window.pbreason = "Blocked because 'a' element was recently created and " + arguments[0] + " event was created shortly after";
+						// console.info(window.pbreason);
+						arguments[0] = lastCreatedAElement.href;
+						parent.postMessage({ type: "blockedWindow", args: JSON.stringify({"0": lastCreatedAElement.href}) }, parentOrigin);
+						return null;
+					}
+					return originalCreateEventFn.apply(document, arguments);
+				} catch(err) {}
+			};
+			/////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+			/////////////////////////////////////////////////////////////////////////////////
+			// Monitor full screen requests
+			/////////////////////////////////////////////////////////////////////////////////
+			function onFullScreen(isInFullScreenMode) {
+					if (isInFullScreenMode) {
+						fullScreenOpenTime = (new Date()).getTime();
+						// console.info("fullScreenOpenTime = " + fullScreenOpenTime);
+					} else {
+						fullScreenOpenTime = NaN;
+					}
+			};
+			/////////////////////////////////////////////////////////////////////////////////
+
+			function isDocumentInFullScreenMode() {
+				// Note that the browser fullscreen (triggered by short keys) might
+				// be considered different from content fullscreen when expecting a boolean
+				return ((document.fullScreenElement && document.fullScreenElement !== null) ||    // alternative standard methods
+					((document.mozFullscreenElement != null) || (document.webkitFullscreenElement != null)));                   // current working methods
+			}
+
+			document.addEventListener("fullscreenchange", function () {
+				onFullScreen(document.fullscreen);
+			}, false);
+
+			document.addEventListener("mozfullscreenchange", function () {
+				onFullScreen(document.mozFullScreen);
+			}, false);
+
+			document.addEventListener("webkitfullscreenchange", function () {
+				onFullScreen(document.webkitIsFullScreen);
+			}, false);
+
+		} inject()</script></html>

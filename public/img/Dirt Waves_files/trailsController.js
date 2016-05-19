@@ -10,13 +10,6 @@ $scope.displayTrails = function() {
 $scope.displayTrails();
 
 
-// toggle user icon text
-$scope.current_user = false;
-
-$scope.toggle_current_user = function() {
-    $scope.current_user = !$scope.current_user;
-};
-
 // current user
 $scope.displayUser = function() {
     trailsService.displayUser().then(function(response) {

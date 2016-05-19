@@ -185,6 +185,9 @@
     color: white;
     border: 1px solid black;
 }
+.user_status_icons_large p {
+    display: inline-block;
+}
 
 .user_status_icons_large a {
     text-decoration: none;
@@ -253,13 +256,12 @@
 
 .shop_background_small {
     background: url('/img/robbo.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: right;
     height: 45vh;
     margin-left: 5vw;
     margin-right: 5vw;
     background-repeat: no-repeat;
-    border: 1px solid;
 }
 
 .shop_tagline_small {
@@ -314,12 +316,6 @@
 .shop_logo img {
     width: 27vw;
     height: 15vh;
-}
-#add_to_cart_button {
-    margin-bottom: 48px;
-}
-#add_to_cart p {
-    margin-bottom: 48px;
 }
 
 .checkout_item_container {
@@ -441,6 +437,10 @@
 .admin_select {
     background: rgb(162, 173, 173);
     text-decoration: underline;
+}
+.admin_trails_container {
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 #admin_content_products {
     margin-top: 0;
@@ -659,14 +659,6 @@
         color: black;
         border: 1px solid black;
     }
-    #add_to_cart p {
-        background: white;
-        border: 1px solid;
-        color: black;
-        text-shadow: none;
-        margin-left: 25vw;
-        margin-right: 25vw;
-    }
     .featured_container_1 {
         display: flex;
         justify-content: center;
@@ -795,21 +787,6 @@
     .product_content_container img {
         border: 1px solid black;
     }
-    #trails_header {
-        font-size: 50px;
-    }
-    .trails_title_text {
-        font-size: 60px;
-    }
-    .trails_search {
-        font-size: 30px;
-        margin-left: 38%;
-    }
-    .trails_collection_container {
-        margin-left: 5vw;
-        margin-right: 5vw;
-        font-size: 30px;
-    }
 }
 
 @media (min-width: 800px) {
@@ -846,10 +823,6 @@
     .checkout_item_container {
         padding-top: 5vh;
     }
-    .trails_collection_container {
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
 }
 
 @media (min-width: 900px) {
@@ -881,10 +854,6 @@
     }
     #add_to_cart_button {
         font-size: 2vw;
-    }
-    .trails_collection_container {
-        margin-left: 15vw;
-        margin-right: 15vw;
     }
 }
 
@@ -936,8 +905,6 @@
     }
     .user_status_icons_large {
         font-size: 25px;
-        justify-content: flex-start;
-        padding-left: 10px;
     }
     .shop_order_header {
         font-size: 60px;
