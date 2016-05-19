@@ -18,7 +18,8 @@
     padding-top: 32vh;
     display: none;
     color: white;
-    text-shadow: 4px 4px black;
+    text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;;
 }
 
 #tagline {
@@ -27,17 +28,20 @@
 }
 
 .large_tagline {
-    font-size: 10vw;
+    font-size: 13vw;
     font-family: Amatic SC;
-    text-align: right;
+    text-align: center;
     margin-right: 10px;
     display: none;
-    background: url('img/tagline_background.jpg');
+    background: url('img/robbo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: top;
     width: 100vw;
     color: white;
-    text-shadow: 2px 2px black;
+    text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+    height: 15vh;
 }
 
 .large_tagline p {
@@ -154,11 +158,12 @@
 }
 
 .shop_order_header {
-    background-color: black;
+    background: linear-gradient(rgb(0, 0, 0), rgb(74, 74, 74));
     color: white;
     font-family: Amatic SC;
     font-size: 10vw;
     text-align: center;
+    border: 1px solid black;
 }
 
 .user_status_icons {
@@ -180,9 +185,10 @@
     font-family: Amatic SC;
     font-size: 3vw;
     margin-right: 10px;
-    background: black;
+    background: linear-gradient(rgb(74, 74, 74), rgb(0, 0, 0));
     width: 100vw;
     color: white;
+    border: 1px solid black;
 }
 
 .user_status_icons_large a {
@@ -194,7 +200,6 @@
     text-align: center;
     font-family: Amatic SC;
     font-size: 6vw;
-    margin-top: 5px;
 }
 
 .user_status_text p {
@@ -251,8 +256,20 @@
     left: -18vw;
 }
 
-.featured_text {
-    display: none;
+.shop_background_small {
+    background: url('/img/robbo.jpg');
+    background-size: contain;
+    background-position: right;
+    height: 45vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    background-repeat: no-repeat;
+}
+
+.shop_tagline_small {
+    font-family: Amatic SC;
+    text-align: center;
+    font-size: 10vw;
 }
 
 .shop_image {
@@ -328,11 +345,12 @@
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgba(0, 0, 0, 1);
+    background: linear-gradient(rgb(0, 0, 0), rgb(74, 74, 74));
     padding-top: 5px;
     padding-bottom: 5px;
     position: fixed;
     bottom: 0px;
+    border: 1px solid black;
 }
 
 .footerContainer a {
@@ -475,7 +493,7 @@
         background: url('/img/robbo.jpg');
         background-size: cover;
         background-position: right;
-        height: 100vh;
+        height: 95vh;
     }
     .small_logo {
         display: none;
@@ -487,7 +505,8 @@
         font-size: 5vw;
         font-family: Amatic SC;
         color: white;
-        text-shadow: 2px 2px black;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
         margin-top: -5vh;
     }
     .large_tagline {
@@ -507,7 +526,8 @@
         left: 0;
         margin: auto;
         color: white;
-        text-shadow: 2px 2px black;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
     }
     #register_button {
         color: black;
@@ -517,7 +537,8 @@
     }
     .fbLogin a {
         color: white;
-        text-shadow: 2px 2px black;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;;
     }
     .login_wave {
         display: none;
@@ -537,8 +558,33 @@
     #acc {
         font-size: 3vw;
     }
+    .shop_background_small {
+        display: none;
+    }
+    .shop_tagline_small {
+        display: none;
+    }
+    .shop_background_large {
+        background: url('/img/checkout_bg.jpg');
+        background-size: cover;
+        background-position: right;
+        height: 100vh;
+    }
     #product_description {
         margin-top: 3vh;
+    }
+    .navBar_container {
+        background: linear-gradient(rgb(0, 0, 0), rgb(74, 74, 74));
+        border: 1px solid black;
+        color: white;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+    }
+    .navBar li {
+        background: linear-gradient(rgb(0, 0, 0), rgb(74, 74, 74));
+        color: white;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
     }
     .footerContainer {
         position: relative;
@@ -554,9 +600,9 @@
         font-size: 4vw;
         margin-left: 15vw;
         margin-right: 15vw;
-    }
-    #product_image {
-        border: 1px solid black;
+        color: white;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
     }
     .product_content_container img {
         width: 350px;
@@ -564,6 +610,16 @@
     }
     .product_title {
         font-size: 8vw;
+        text-align: center;
+        color: white;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+    }
+    .checkout_item {
+        text-align: center;
+        color: white;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
     }
     .shop_image {
         display: none;
@@ -571,11 +627,7 @@
     #add_to_cart_button {
         font-size: 3vw;
         margin-bottom: 18vh;
-    }
-    .featured_text {
-        font-family: Amatic SC;
-        text-align: center;
-        font-size: 8vw;
+        color: black;
     }
     .featured_container_1 {
         display: flex;
@@ -592,6 +644,7 @@
         margin-right: 5vw;
         margin-top: 10px;
         margin-bottom: 10px;
+        border: 1px solid black;
     }
     .featured_container_2 {
         display: flex;
@@ -608,6 +661,7 @@
         margin-right: 5vw;
         margin-top: 10px;
         margin-bottom: 10px;
+        border: 1px solid black;
     }
     .featured_container_3 {
         display: flex;
@@ -624,6 +678,7 @@
         margin-right: 5vw;
         margin-top: 10px;
         margin-bottom: 10px;
+        border: 1px solid black;
     }
     .featured_container_4 {
         display: flex;
@@ -640,9 +695,12 @@
         margin-right: 5vw;
         margin-top: 10px;
         margin-bottom: 10px;
+        border: 1px solid black;
     }
     #submit_order_button {
         font-size: 3vw;
+        border: 1px solid black;
+        color: black;
     }
     #thankyou {
         font-size: 10vw;
@@ -655,7 +713,10 @@
     }
     .order_confirm_container {
         font-size: 5vw;
-        text-align: justify;
+        text-align: center;
+        color: white;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;;
         margin-left: 15vw;
         margin-right: 15vw;
     }
@@ -671,6 +732,14 @@
     .shop_order_header p {
         margin: 0;
     }
+    .checkout_background {
+        background: url('img/checkout_bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+
+    }
     #total {
         font-size: 7vw;
     }
@@ -684,6 +753,9 @@
     }
     .navBar {
         margin-top: 0;
+    }
+    .product_content_container img {
+        border: 1px solid black;
     }
 }
 
