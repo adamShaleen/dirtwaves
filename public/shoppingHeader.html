@@ -90,9 +90,7 @@
 <div  ng-show="product_img_toggle" class="product_content_container">
         <div class="product_title"><p>{{selectedProduct.title}}</p></div>
         <div id="product_image"><img ng-src="{{selectedProduct.image}}"></img></div>
-        <div id="product_description"><p>{{selectedProduct.description}}</p></div>
-        <div id="product_geo"><p>{{selectedProduct.geo}}</p></div>
-        <div id="product_price"><p>${{selectedProduct.price}}</p></div>
+        <div id="product_description"><p>{{selectedProduct.description}}&nbsp;&nbsp;${{selectedProduct.price}}</p></div>
         <button id="add_to_cart_button" ng-click="toggleAddToCartModal(selectedProduct._id); addToCart(selectedProduct._id)" ng-hide="addToCartModal[selectedProduct._id]" class="btn">add to cart</button>
         <div ng-show="addToCartModal[selectedProduct._id]" id="add_to_cart"><p>added to cart!</p></div>
 </div>
