@@ -533,7 +533,7 @@
         margin-top: 0vh;
     }
     .login_input_container {
-        font-size: 6vw;
+        font-size: 40px;
         top: 0;
         bottom: 0;
         right: 0;
@@ -761,7 +761,7 @@
         margin-top: -40px;
     }
     .checkout_item_container {
-        font-size: 4vw;
+        font-size: 34px;
         margin-left: 15vw;
         margin-right: 15vw;
         text-align: justify;
@@ -882,9 +882,6 @@
 
 /*===========================================================================*/
 @media (min-width: 900px) {
-    .login_input_container {
-        font-size: 5vw;
-    }
     #featured_1 {
         margin-left: 10vw;
         margin-right: 10vw;
@@ -919,8 +916,11 @@
 
 /*===========================================================================*/
 @media (min-width: 1000px) {
-    .login_input_container {
-        font-size: 5vw;
+    .large_logo {
+        font-size: 15vw;
+    }
+    #tagline {
+        margin-top: -7vh;
     }
     #featured_1 {
         height: 31vh;
@@ -987,9 +987,9 @@
     .product_title {
         font-size: 60px;
     }
-    .checkout_item_container {
+    /*.checkout_item_container {
         font-size: 50px;
-    }
+    }*/
     .order_confirm_container {
         font-size: 50px;
     }
@@ -1007,6 +1007,11 @@
 
 /*===========================================================================*/
 @media (min-width: 1300px) {
+    .large_logo {
+        font-size: 12vw;
+        padding-top: 29vh;
+    }
+
     #featured_1 {
         display: none;
     }
@@ -1034,14 +1039,8 @@
 
 /*============================================================================*/
 @media (min-width: 1500px) {
-    .large_logo p {
-        margin-top: -9%;
-    }
-    #tagline {
-        margin-top: -10vh;
-    }
-    .login_input_container {
-        font-size: 3vw;
+    .large_logo {
+        padding-top: 25vh;
     }
     .product_content_container {
         margin-left: 25vw;
@@ -1051,8 +1050,11 @@
 
 /*============================================================================*/
 @media (min-width: 1600px) {
-    .large_logo p {
-        margin-top: -10%;
+    .large_logo {
+        font-size: 10vw;
+    }
+    #tagline {
+        font-size: 3vw;
     }
     #thankyou {
         margin-left: 10vw;
