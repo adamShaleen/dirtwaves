@@ -40,9 +40,7 @@ mongoose.set('debug', true);
 
 app.use(express.static(__dirname + '/public'));
 
-
-// Local Auth protocols-------------------------------------
-// var localAuth = function() {
+//local auth
     passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -67,11 +65,8 @@ passport.deserializeUser(function(_id, done) {
     });
 });
 
-// };
 
-
-// Facebook login protocols---------------------------------
-// var facebookAuth = function() {
+//Facebook Auth
     passport.use(new FacebookStrategy({
     clientID: keys.facebookID,
     clientSecret: keys.facebookSecret,
@@ -95,7 +90,7 @@ passport.deserializeUser(function(_id, done) {
         }
     });
 }));
-// };
+
 
 app.get('/login/facebook',
     passport.authenticate('facebook'));
@@ -112,9 +107,9 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(object, done) {
     done(null, object);
 });
-//---------------------------------------------------------
 
-// USER---------------------------------------------------
+
+// USER===================================================================
 
 app.post('/users', serverController.register);
 
@@ -132,9 +127,9 @@ app.get('/logout', function(request, response, next) {
     return response.status(200).send('logged out');
 });
 
-//------------------------------------------------------
 
-// FB login endpoints
+
+// FB login endpoints===================================================
 
 app.get('/shop', serverController.facebookLogin);
 
@@ -159,7 +154,7 @@ app.put('/login/user/:id', serverController.updateUserOnDatabaseById);
 // delete user on database by id
 app.delete('/login/user/:id', serverController.deleteUserOnDatabaseById);
 
-// PRODUCT------------------------------------------------
+// PRODUCT==============================================================
 
 // add product to database
 app.post('/products', serverController.addProductToDatabase);
@@ -176,12 +171,12 @@ app.put('/products/:id', serverController.updateProductOnDatabaseById);
 // delete product on database by id
 app.delete('/products/:id', serverController.deleteProductOnDatabaseById);
 
-// Carts
+// Carts===============================================================
 
 // add product to cart
 app.put('/cart/addItem', serverController.addItemToCart);
 
-// ORDER---------------------------------------------------
+// ORDER===============================================================
 
 // Add order to database
 app.post('/order', serverController.addOrderToDatabase);
@@ -198,7 +193,7 @@ app.put('/order/:id', serverController.updateOrderOnDatabaseById);
 // delete Order on database by id
 app.delete('/order/:id', serverController.deleteOrderOnDatabaseById);
 
-// TRAILS DATABASE---------------------------------------------------------
+// TRAILS DATABASE=====================================================
 
 // add trails to database
 app.post('/trails', serverController.addTrails);
@@ -217,7 +212,7 @@ app.delete('/trails/:id', serverController.deleteTrails);
 
 
 
-// LISTEN-----------------------------------------------------------------
+// LISTEN=============================================================
 
 app.listen(3000, function() {
     console.log("Party on port 3000");

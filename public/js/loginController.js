@@ -9,14 +9,13 @@ $scope.toggleLoginOnClick = function() {
 //-----------------------------------------------------------
 
 // local auth login
-
 $scope.login = function() {
     service.login($scope.credentials).then(function(response) {
         $state.go('shop');
     });
 };
 
-
+// register
 $scope.register = function() {
     service.register($scope.credentials).then(function(response) {
         if(response) {

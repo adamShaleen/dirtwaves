@@ -21,7 +21,7 @@ var productSchema = new Schema ({
     },
     geo: {type: String},
     image: {
-        type: String,  // pointed url for all products to local file.  Not sure if this works...
+        type: String,
     }
 });
 

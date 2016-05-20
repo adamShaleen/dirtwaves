@@ -6,10 +6,8 @@ $scope.current_user = false;
 $scope.toggle_current_user = function() {
     $scope.current_user = !$scope.current_user;
 };
-//----------------------------------------------------
 
 // display current user
-
 $scope.displayUser = function() {
     service.displayUser().then(function(response) {
         $scope.user_name = response;
@@ -17,10 +15,8 @@ $scope.displayUser = function() {
 };
 
 $scope.displayUser();
-//-----------------------------------------------------------
 
 // logout
-
 $scope.logout = function() {
     service.logout().then(function(response) {
         $state.go('login');
@@ -29,7 +25,6 @@ $scope.logout = function() {
 
 
 // display products
-
 $scope.frames = [];
 $scope.bars = [];
 $scope.stems = [];
@@ -59,7 +54,6 @@ $scope.displayProducts = function() {
 };
 
 $scope.displayProducts();
-//--------------------------------------------------------------
 
 // product select
 $scope.product_img_toggle = false;
@@ -72,7 +66,6 @@ $scope.selectProduct = function(product) {
 };
 
 // highlight product category
-
 $scope.selectCategory = function(category) {
         $scope.selectedCategory = category;
 };
@@ -82,17 +75,13 @@ $scope.deselectCategory = function() {
 };
 
 
-//-------------------------------------------------------------
-
 // toggle between background image and product content
-
 $scope.toggleProductImg = function() {
     $scope.product_img_toggle = !$scope.product_img_toggle;
 };
-//---------------------------------------------------------------
+
 
 // add to cart
-
 $scope.addToCartModal = {};
 $scope.toggleAddToCartModal = function(id) {
     $scope.addToCartModal[id] = true;
@@ -109,8 +98,6 @@ $scope.addToCart = function(product) {
     });
 };
 
-
-//---------------------------------------------------------------
 
 
 });  // closing controller tag

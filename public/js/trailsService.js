@@ -1,5 +1,6 @@
 angular.module('dirtWaves').service('trailsService', function($http) {
 
+// display trails
 this.getTrails = function() {
     return $http ({
         method: 'GET',
@@ -9,7 +10,7 @@ this.getTrails = function() {
     });
 };
 
-
+// add new trails
 this.addTrails = function(trails) {
     return $http ({
         method: 'POST',
@@ -20,7 +21,7 @@ this.addTrails = function(trails) {
     });
 };
 
-
+// update existing trails
 this.updateTrails = function(trails) {
     return $http ({
         method: 'PUT',
@@ -29,6 +30,7 @@ this.updateTrails = function(trails) {
     });
 };
 
+// delete existing trails
 this.deleteTrails = function(trails) {
     return $http ({
         method: 'DELETE',

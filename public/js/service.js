@@ -54,8 +54,7 @@ this.logout = function() {
 };
 
 
-
-// display current user--------------------------------------
+// display current user
 this.displayUser = function() {
     return $http ({
         method: 'GET',
@@ -75,7 +74,7 @@ this.displayAllUsers = function() {
     });
 };
 
-//-----------------------------------------------------------
+
 //PRODUCTS
 
 // display products from database
@@ -118,7 +117,6 @@ this.removeProductToAdmin = function(product) {
     });
 };
 
-//------------------------------------------------------------
 
 // add item to cart
 this.addItemToCart = function(product) {
@@ -131,7 +129,6 @@ this.addItemToCart = function(product) {
     });
 };
 
-//-----------------------------------------------------------
 
 // update user
 this.updateUser = function(user) {
@@ -143,11 +140,9 @@ this.updateUser = function(user) {
         return response.data;
     });
 };
-//-----------------------------------------------------------
 
 
 // Add order to database
-
 this.submitOrder = function(user, total) {
     return $http ({
         method: 'POST',
@@ -159,7 +154,6 @@ this.submitOrder = function(user, total) {
 };
 
 // display order
-
 this.displayOrder = function() {
     return $http ({
         method: 'GET',
