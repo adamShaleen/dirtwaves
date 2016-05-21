@@ -11,9 +11,8 @@
     <button ng-click="toggle_trails()" class="btn">Trails</button>
 </div>
 
-<div class="admin_content_container">
-
-    <div ng-show="admin_products" id="admin_content_products" class="admin_content">
+<div class="admin_container">
+    <div ng-show="admin_products" class="admin_input">
         <h3>Products</h3>
         <input ng-model="sortProduct" type="text" placeholder="Product Search"></input><br>
         <input ng-model="newProduct.title" type="text" placeholder="New product title"></input>
@@ -29,22 +28,25 @@
         <input ng-model="selected.price" type="text" placeholder="Update/remove price"></input>
         <input ng-model="selected.image" type="text" placeholder="Update/remove img"></input><br>
         <button ng-click="deselectProduct()" class="btn update_remove_btn">Deselect</button><button ng-click="updateProduct(selected)" class="btn update_remove_btn">Update Product</button><button ng-click="removeProduct(selected)" class="btn update_remove_btn">Remove Product</button>
+    </div>
+
+    <div ng-show="admin_products" class="admin_text">
         <p class="admin_product_text" ng-class="{admin_select: selected === product}" ng-repeat="product in products | filter: sortProduct" ng-click="selectProduct(product)">{{product.title}}|{{product.category}}|{{product.description}}|${{product.price}}|{{product.image}}</p>
     </div>
 
-    <div ng-show="admin_users" id="admin_content_users" class="admin_content">
+    <div ng-show="admin_users" class="admin_input">
         <h3>Users</h3>
         <input ng-model="sortUser" type="text" placeholder="User Search"></input>
         <p ng-repeat="users in allUsers | filter: sortUser">{{users.name || users.email}}</p>
     </div>
 
-    <div ng-show="admin_orders" id="admin_content_orders" class="admin_content">
+    <div ng-show="admin_orders" class="admin_input">
         <h3>Orders</h3>
         <input ng-model="sortOrder" placeholder="Order Search"></input>
         <p ng-repeat="order in allOrders | filter: sortOrder">Order#: DW{{order._id}}&nbsp;&nbsp;{{order.orderDate | date: yyyy-MM-dd}}</p>
     </div>
 
-    <div ng-show="admin_trails" id="admin_content_trails" class="admin_trails_container admin_content">
+    <div ng-show="admin_trails" class="admin_input">
         <h3>Trails</h3>
         <input ng-model="sortTrails" type="text" placeholder="Trails Search"></input><br>
         <input ng-model="trail.name" type="text" placeholder="New trails name"></input>
@@ -62,6 +64,9 @@
         <input ng-model="selected.contact" type="text" placeholder="Update/remove contact"></input>
         <input ng-model="selected.description" type="text" placeholder="Update/remove desc."></input><br>
         <button ng-click="deselectProduct()" class="btn update_remove_btn">Deselect</button><button class="btn update_remove_btn" ng-click="updateTrails(selected)">Update trails</button><button ng-click="deleteTrails(selected)" class="btn update_remove_btn">Remove trails</button>
+    </div>
+
+    <div ng-show="admin_trails" class="admin_text">
         <p class="admin_product_text" ng-class="{admin_select: selected === trail}" ng-repeat="trail in trails" ng-click="selectProduct(trail)">{{trail.name}}<br>{{trail.city}}<br>{{trail.state}}<br>{{trail.zipcode}}<br>{{trail.contact}}<br>{{trail.description}}</p>
     </div>
 

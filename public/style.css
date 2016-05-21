@@ -383,7 +383,7 @@
     text-align: center;
     margin: auto;
     font-size: 5vw;
-    width: 70%;
+    width: 60%;
     border-bottom: 1px solid black;
 }
 
@@ -401,6 +401,33 @@
 
 .admin_btn button {
     border: 1px solid black;
+}
+
+.admin_container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vw;
+}
+
+.admin_container button {
+    border: 1px solid black;
+}
+
+.admin_container input {
+    border: 1px solid black;
+}
+
+.admin_input {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.admin_text {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15vw;
 }
 
 .admin_content_container {
@@ -564,17 +591,14 @@
     .login_wave {
         display: none;
     }
-
-
-
-    /*PLAYING AROUND WITH NEW DESKTOP HEADER*/
-
     .header_desktop {
         display: flex;
         font-family: Amatic SC;
         background: black;
         color: white;
         border: 1px solid black;
+        margin-top: -5px;
+        margin-bottom: -15px;
     }
     #title_desktop {
         display: flex;
@@ -590,6 +614,7 @@
     }
     #nav_desktop a {
         color: white;
+        text-decoration: none;
     }
 
     #frames {
@@ -774,16 +799,15 @@
         border: 1px solid black;
     }
     #submit_order_button {
-        font-size: 3vw;
+        font-size: 18px;
         border: 1px solid black;
         color: black;
     }
     #thankyou {
-        font-size: 120px;
-        margin-top: -40px;
+        font-size: 85px;
     }
     .order_summary {
-        font-size: 8vw;
+        font-size: 45px;
         text-align: center;
         color: white;
         text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
@@ -799,7 +823,7 @@
         border: 1px solid black;
     }
     .order_confirm_container {
-        font-size: 5vw;
+        font-size: 40px;
         text-align: center;
         color: white;
         text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
@@ -934,6 +958,12 @@
     }
     .checkout_item_container {
         font-size: 20px;
+        margin-left: 24vw;
+        margin-right: 24vw;
+    }
+    .order_confirm_container {
+        margin-left: 24vw;
+        margin-right: 24vw;
     }
     #add_to_cart_button {
         font-size: 2vw;
@@ -961,6 +991,15 @@
     #featured_3 {
         height: 31vh;
     }
+    .checkout_item_container {
+        font-size: 20px;
+        margin-left: 28vw;
+        margin-right: 28vw;
+    }
+    .order_confirm_container {
+        margin-left: 28vw;
+        margin-right: 28vw;
+    }
 }
 
 /*============================================================================*/
@@ -979,6 +1018,15 @@
         height: 28vh;
         margin-left: 17vw;
         margin-right: 17vw;
+    }
+    .checkout_item_container {
+        font-size: 25px;
+        margin-left: 30vw;
+        margin-right: 30vw;
+    }
+    .order_confirm_container {
+        margin-left: 30vw;
+        margin-right: 30vw;
     }
 }
 
@@ -1011,21 +1059,11 @@
         margin-left: 20vw;
         margin-right: 20vw;
     }
-    .product_title {
-        font-size: 60px;
-    }
-    .order_confirm_container {
-        font-size: 50px;
-    }
     #total {
         font-size: 50px;
     }
     #submit_order_button {
         font-size: 22px;
-    }
-    #thankyou {
-        font-size: 120px;
-        margin-top: -90px;
     }
 }
 
@@ -1051,10 +1089,6 @@
         margin-left: 23vw;
         margin-right: 23vw;
     }
-    .checkout_item_container {
-        margin-left: 23vw;
-        margin-right: 23vw;
-    }
 }
 
 @media (min-width: 1400px) {
@@ -1073,20 +1107,10 @@
         margin-left: 25vw;
         margin-right: 25vw;
     }
-    .checkout_item_container {
-        margin-left: 25vw;
-        margin-right: 25vw;
-    }
 }
 
 /*============================================================================*/
 @media (min-width: 1600px) {
-    .large_logo {
-        font-size: 10vw;
-    }
-    #tagline {
-        font-size: 3vw;
-    }
     #thankyou {
         margin-left: 10vw;
         margin-right: 10vw;
@@ -1099,19 +1123,10 @@
         margin-left: 27vw;
         margin-right: 27vw;
     }
-    .checkout_item_container {
-        margin-left: 27vw;
-        margin-right: 27vw;
-    }
     .login_background_image {
         background-position: top;
     }
-}
-
-/*============================================================================*/
-@media (min-width: 1900px) {
-    #thankyou {
-        margin-left: 15vw;
-        margin-right: 15vw;
+    .checkout_item_container {
+        font-size: 30px;
     }
 }
