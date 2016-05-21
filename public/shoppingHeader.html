@@ -2,11 +2,13 @@
     <P>Dirt Waves</p>
 </div>
 
-<div class="large_tagline"><p>Where trails are made</p></div>
 
-<div class="user_status_icons_large">
-    <p>You are logged in as {{user_name.name || user_name.email}}&nbsp;&nbsp;||&nbsp;&nbsp;</p><a ui-sref="checkout"><p>Proceed to shopping cart&nbsp;<i class="fa fa-shopping-cart"></i></a></p>&nbsp;&nbsp;||&nbsp;&nbsp;<p id="logout" ng-click="logout()">Logout&nbsp;<i class="fa fa-times"></i></p>
+<div class="header_desktop">
+    <div id="title_desktop"><p>Dirt Waves</p></div>
+    <div id="nav_desktop"><p>You are logged in as {{user_name.name || user_name.email}}&nbsp;&nbsp;||&nbsp;&nbsp;</p><a ui-sref="checkout"><p>Proceed to shopping cart&nbsp;<i class="fa fa-shopping-cart"></i></a></p>&nbsp;&nbsp;||&nbsp;&nbsp;<p id="logout" ng-click="logout()">Logout&nbsp;<i class="fa fa-times"></i></p></div>
 </div>
+
+
 
 <div class="user_status_icons">
     <button class="btn"><i ng-click="toggle_current_user()" class="fa fa-user fa-2x"></i></button>
@@ -87,12 +89,10 @@
     <div id="featured_4"></div>
 </div>
 
-<div  ng-show="product_img_toggle" class="product_content_container">
+<div ng-show="product_img_toggle" class="product_content_container">
     <div class="product_title"><p>{{selectedProduct.title}}</p></div>
     <div id="product_image"><img ng-src="{{selectedProduct.image}}"></img></div>
-    <div id="product_description"><p>{{selectedProduct.description}}&nbsp;&nbsp;${{selectedProduct.price}}</p></div>
-    <button id="add_to_cart_button" ng-click="toggleAddToCartModal(selectedProduct._id); addToCart(selectedProduct._id)" ng-hide="addToCartModal[selectedProduct._id]" class="btn">add to cart</button>
-    <div ng-show="addToCartModal[selectedProduct._id]" id="add_to_cart"><p>added to cart!</p></div>
+    <div id="product_description"><p>{{selectedProduct.description}}&nbsp;&nbsp;${{selectedProduct.price}}</p><button id="add_to_cart_button" ng-click="toggleAddToCartModal(selectedProduct._id); addToCart(selectedProduct._id)" ng-hide="addToCartModal[selectedProduct._id]" class="btn">add to cart</button><button id="add_to_cart_button" class="btn" ng-show="addToCartModal[selectedProduct._id]">added to cart!</button></div>
 </div>
 
 <!--Shop background large-->

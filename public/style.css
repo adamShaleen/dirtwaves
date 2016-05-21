@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.header_desktop {
+    display: none;
+}
+
 .loginTitleContainer {
     text-align: center;
     z-index: -10;
@@ -338,7 +342,7 @@
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
-    padding-top: 5vh;
+    /*padding-top: 5vh;*/
 }
 
 .order_confirm_container {
@@ -503,6 +507,9 @@
 
 /*iPad 768 x 1024*/
 @media (min-width: 768px) {
+    .shop_order_header {
+        display: none;
+    }
     .login_background_image {
         background: url('/img/robbo.jpg');
         background-size: cover;
@@ -557,25 +564,58 @@
     .login_wave {
         display: none;
     }
+
+
+
+    /*PLAYING AROUND WITH NEW DESKTOP HEADER*/
+
+    .header_desktop {
+        display: flex;
+        font-family: Amatic SC;
+        background: black;
+        color: white;
+        border: 1px solid black;
+    }
+    #title_desktop {
+        display: flex;
+        margin-left: 3vw;
+        font-size: 50px;
+    }
+    #nav_desktop {
+        display: flex;
+        font-size: 22px;
+        margin-right: 3vw !important;
+        margin: auto;
+        text-decoration: none;
+    }
+    #nav_desktop a {
+        color: white;
+    }
+
     #frames {
         font-size: 3vw;
-        background: black;
+        background: rgba(62, 62, 62, 1);
+        border: 1px solid black;
     }
     #bars {
         font-size: 3vw;
-        background: black;
+        background: rgba(62, 62, 62, 1);
+        border: 1px solid black;
     }
     #stems {
         font-size: 3vw;
-        background: black;
+        background: rgba(62, 62, 62, 1);
+        border: 1px solid black;
     }
     #tires {
         font-size: 3vw;
-        background: black;
+        background: rgba(62, 62, 62, 1);
+        border: 1px solid black;
     }
     #acc {
         font-size: 3vw;
-        background: black;
+        background: rgba(62, 62, 62, 1);
+        border: 1px solid black;
     }
     .shop_background_small {
         display: none;
@@ -589,40 +629,21 @@
         background-position: right;
         height: 100vh;
     }
-    #product_description {
-        margin-top: 3vh;
-        margin-left: 5vw;
-        margin-right: 5vw;
-        background: white;
-        border: 1px solid black;
-        color: black;
-        text-shadow: none;
-    }
-    #product_geo {
-        margin-left: 5vw;
-        margin-right: 5vw;
-        background: white;
-        border: 1px solid black;
-        color: black;
-        text-shadow: none;
-    }
     .navBar_container {
-        background: linear-gradient(rgb(0, 0, 0), rgb(74, 74, 74));
+        background: rgba(62, 62, 62, 1);
         border: 1px solid black;
         color: white;
         text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
     }
     .navBar li {
-        background: linear-gradient(rgb(0, 0, 0), rgb(74, 74, 74));
+        background: rgba(62, 62, 62, 1);
         color: white;
         text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
-    }
-    .navBar {
         font-size: 25px;
     }
-    .navBar li {
+    .navBar {
         font-size: 25px;
     }
     .footerContainer {
@@ -645,6 +666,7 @@
         font-size: 4vw;
         margin-left: 15vw;
         margin-right: 15vw;
+        padding-top: 5vh;
         color: white;
         text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
@@ -655,6 +677,15 @@
         color: white;
         text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+        background: rgba(112, 112, 112, 0.79);
+        border: 1px solid black;
+    }
+    #product_description {
+        color: white;
+        background: rgba(112, 112, 112, 0.79);
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+             border: 1px solid black;
     }
     .product_content_container p {
         margin-left: 5vw;
@@ -671,17 +702,8 @@
     }
     #add_to_cart_button {
         font-size: 3vw;
-        margin-bottom: 18vh;
         color: black;
         border: 1px solid black;
-    }
-    #add_to_cart p {
-        background: white;
-        border: 1px solid;
-        color: black;
-        text-shadow: none;
-        margin-left: 25vw;
-        margin-right: 25vw;
     }
     .featured_container_1 {
         display: flex;
@@ -760,11 +782,21 @@
         font-size: 120px;
         margin-top: -40px;
     }
+    .order_summary {
+        font-size: 8vw;
+        text-align: center;
+        color: white;
+        text-shadow: #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px,
+             #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;
+    }
     .checkout_item_container {
         font-size: 34px;
         margin-left: 15vw;
         margin-right: 15vw;
+        margin-bottom: 2vw;
         text-align: justify;
+        background: rgba(112, 112, 112, 0.79);
+        border: 1px solid black;
     }
     .order_confirm_container {
         font-size: 5vw;
@@ -774,6 +806,8 @@
              #000 0px 0px 1px,   #000 0px 0px 1px,   #000 0px 0px 1px;;
         margin-left: 15vw;
         margin-right: 15vw;
+        background: rgba(112, 112, 112, 0.79);
+        border: 1px solid black;
     }
 
     .user_status_icons {
@@ -871,9 +905,6 @@
         margin-right: 20vw;
         padding-top: 5vh;
     }
-    .checkout_item_container {
-        padding-top: 5vh;
-    }
     .trails_collection_container {
         margin-left: 10vw;
         margin-right: 10vw;
@@ -901,9 +932,8 @@
     .product_content_container {
         font-size: 20px;
     }
-    #product_description {
-        margin-left: 10vw;
-        margin-right: 10vw;
+    .checkout_item_container {
+        font-size: 20px;
     }
     #add_to_cart_button {
         font-size: 2vw;
@@ -950,9 +980,6 @@
         margin-left: 17vw;
         margin-right: 17vw;
     }
-    .product_content_container img {
-        width: 500px;
-    }
 }
 
 /*============================================================================*/
@@ -987,9 +1014,6 @@
     .product_title {
         font-size: 60px;
     }
-    /*.checkout_item_container {
-        font-size: 50px;
-    }*/
     .order_confirm_container {
         font-size: 50px;
     }
@@ -1011,7 +1035,6 @@
         font-size: 12vw;
         padding-top: 29vh;
     }
-
     #featured_1 {
         display: none;
     }
@@ -1025,6 +1048,10 @@
         display: none;
     }
     .product_content_container {
+        margin-left: 23vw;
+        margin-right: 23vw;
+    }
+    .checkout_item_container {
         margin-left: 23vw;
         margin-right: 23vw;
     }
@@ -1043,6 +1070,10 @@
         padding-top: 25vh;
     }
     .product_content_container {
+        margin-left: 25vw;
+        margin-right: 25vw;
+    }
+    .checkout_item_container {
         margin-left: 25vw;
         margin-right: 25vw;
     }
@@ -1067,6 +1098,13 @@
     .product_content_container {
         margin-left: 27vw;
         margin-right: 27vw;
+    }
+    .checkout_item_container {
+        margin-left: 27vw;
+        margin-right: 27vw;
+    }
+    .login_background_image {
+        background-position: top;
     }
 }
 

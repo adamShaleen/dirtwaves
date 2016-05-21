@@ -2,15 +2,16 @@
     <P>Dirt Waves</p>
 </div>
 
-<div class="large_tagline"><p>Where trails are made</p></div>
 
-<div class="user_status_icons_large">
-    <p>You are logged in as {{user_name.name || user_name.email}}&nbsp;&nbsp;||&nbsp;&nbsp;</p><a ui-sref="shop"><p>Proceed to Catalog&nbsp;<i class="fa fa-shopping-bag"></i></a></p>&nbsp;&nbsp;||&nbsp;&nbsp;<p id="logout" ng-click="logout()">Logout&nbsp;<i class="fa fa-times"></i></p>
+<div class="header_desktop">
+    <div id="title_desktop"><p>Dirt Waves</p></div>
+    <div id="nav_desktop"><p>You are logged in as {{user_name.name || user_name.email}}&nbsp;&nbsp;||&nbsp;&nbsp;<a ui-sref="shop"><p>Proceed to Catalog&nbsp;<i class="fa fa-shopping-bag"></i></a></p>&nbsp;&nbsp;||&nbsp;&nbsp;<p id="logout" ng-click="logout()">Logout&nbsp;<i class="fa fa-times"></i></p></div>
 </div>
+
 
 <div class="user_status_icons">
     <button class="btn"><i ng-click="toggle_current_user()" class="fa fa-user fa-2x"></i></button>
-    <button class="btn"><a ui-sref="checkout"<i class="fa fa-shopping-cart fa-2x"></i></a></button>
+    <button class="btn"><a ui-sref="shop"<i class="fa fa-shopping-cart fa-2x"></i></a></button>
     <button ng-click="logout()" class="btn"><i class="fa fa-times fa-2x"></i></button>
 </div>
 
