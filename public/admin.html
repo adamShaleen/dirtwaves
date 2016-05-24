@@ -70,4 +70,12 @@
         <p class="admin_product_text" ng-class="{admin_select: selected === trail}" ng-repeat="trail in trails" ng-click="selectProduct(trail)">{{trail.name}}<br>{{trail.city}}<br>{{trail.state}}<br>{{trail.zipcode}}<br>{{trail.contact}}<br>{{trail.description}}</p>
     </div>
 
+    <div ng-show="admin_background" class="admin_background_images">
+        <div class="admin_background_images_row"><div id="row1_image1"></div><div id="row1_image2"></div><div id="row1_image3"></div></div>
+        <div class="admin_background_images_row"><div id="row2_image1"></div><div id="row2_image2"></div><div id="row2_image3"></div></div>
+        <div class="admin_background_images_row"><div id="row3_image1"></div><div id="row3_image2"></div><div id="row3_image3"></div></div>
+        <div class="admin_background_images_row"><div id="row4_image1"></div><div id="row4_image2"></div><div id="row4_image3"></div></div>
+    </div>
+
+
 </div>

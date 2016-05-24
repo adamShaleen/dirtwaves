@@ -1,13 +1,19 @@
 angular.module('dirtWaves').controller('adminController', function($scope, service, trailsService) {
 
+// initial value for background
+$scope.admin_background = true;
+
 $scope.admin_products = false;
 
 $scope.toggle_admin_products = function() {
     $scope.admin_users = false;
     $scope.admin_orders = false;
     $scope.admin_trails = false;
+    $scope.admin_background = false;
     $scope.admin_products = !$scope.admin_products;
-
+    if (!$scope.admin_products) {
+        $scope.admin_background = true;
+    }
 };
 
 $scope.displayProducts = function() {
@@ -27,7 +33,11 @@ $scope.toggle_admin_users = function() {
         $scope.admin_products = false;
         $scope.admin_orders = false;
         $scope.admin_trails = false;
+        $scope.admin_background = false;
         $scope.admin_users = !$scope.admin_users;
+        if (!$scope.admin_users) {
+            $scope.admin_background = true;
+        }
 };
 
 $scope.displayAllUsers = function() {
@@ -47,7 +57,11 @@ $scope.toggle_admin_orders = function() {
     $scope.admin_products = false;
     $scope.admin_users = false;
     $scope.admin_trails = false;
+    $scope.admin_background = false;
     $scope.admin_orders = !$scope.admin_orders;
+    if (!$scope.admin_orders) {
+        $scope.admin_background = true;
+    }
 };
 
 $scope.displayAllOrders = function() {
@@ -108,7 +122,11 @@ $scope.toggle_trails = function() {
     $scope.admin_users = false;
     $scope.admin_orders = false;
     $scope.admin_products = false;
+    $scope.admin_background = false;
     $scope.admin_trails = !$scope.admin_trails;
+    if (!$scope.admin_trails) {
+        $scope.admin_background = true;
+    }
 };
 
 
@@ -144,5 +162,14 @@ $scope.deleteTrails = function(trails) {
         $scope.selected = {};
     });
 };
+
+// Background-------------------------------------------------------
+
+// $scope.admin_background = true;
+// $scope.toggle_admin_background = function() {
+//     if ($scope.admin_products || $scope.admin_users || $scope.admin_orders || $scope.admin_trails) {
+//         $scope.admin_background = false;
+//     }
+// };
 
 });  // closing controller tag.

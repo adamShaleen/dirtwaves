@@ -533,6 +533,107 @@
     margin: 20px;
     margin-bottom: 50px;
 }
+
+
+.admin_background_images_row {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#row1_image1 {
+    background: url('https://ds4d3zl5uvpbf.cloudfront.net/custom_video_thumbnail/83724/standard_dig_x_robbo_screen.JPG');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
+#row1_image2 {
+    background: url('http://canyoudigitbmx.com/wp-content/uploads/2014/12/ROE_MARTINEZ_ROBBO_BMX_MTNYCTTY_PA_RD_2.jpg');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
+#row1_image3 {
+    background: url('http://i0.wp.com/canyoudigitbmx.com/wp-content/uploads/2013/11/Derrick-Kink-Tanner-Trails-Jam.jpg?w=800');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
+#row2_image1 {
+    background: url('http://mellonbmx.com/wp-content/uploads/2011/10/robbo.png');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
+#row2_image2 {
+    background: url('http://c304977.r77.cf1.rackcdn.com/backend/wp-content/uploads/2013/03/image61.jpg');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
+#row2_image3 {
+    background: url('http://s3-eu-west-1.amazonaws.com/digbmx/video/_landscape450/dig_trails_decoy_Thumb.jpg');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
+#row3_image1 {
+    background: url('http://a4.espncdn.com/photo/2013/0411/as_bmx_catty_2048.jpg');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
+#row3_image2 {
+    background: url('https://s-media-cache-ak0.pinimg.com/736x/bd/13/5b/bd135b1e1767007e122ba09141aac9ab.jpg');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
+#row3_image3 {
+    background: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS7OV17D7sRM7QNh-ROIan6ooDVVYd9N6q33IqPg73dku7MKTwh');
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2%;
+    border: 1px solid;
+}
+
 /*==========================================================================*/
 /*Media Queries*/
 
